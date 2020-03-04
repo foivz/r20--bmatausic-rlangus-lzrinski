@@ -22,8 +22,8 @@ F03 | Kupovina i rezervacija karata | ... | ...
 F04 | Dodavanje, brisanje i ažuriranje podataka | ... | ...
 
 ## Tehnologije i oprema
-Visual Studio
-Visual Paradigm
-Draw.io
-Microsoft Project
-3 računala
+* Visual Studio
+* Visual Paradigm
+* Draw.io
+* Microsoft Project
+* 3 računala
