@@ -21,7 +21,7 @@ Robert Langus | rlangus@foi.hr | 0016122793 | DigitalDevelooper
 Luka Zrinski | lzrinski@foi.hr | 0016131570 | Zrinski34
 
 ## Opis domene
-'CineManage' omogućuje upravljanje podacima vezanih uz određeno kino, te prodaju i evidenciju za korisnike i administratore.     
+'CineManage' omogućuje upravljanje podacima vezanih uz kino, te prodaju i evidenciju za korisnike i administratore.     
 
 ## Specifikacija projekta
 Umjesto ovih uputa opišite zahtjeve za funkcionalnošću programskog proizvoda. Pobrojite osnovne funkcionalnosti i za svaku naznačite ime odgovornog člana tima. Opišite buduću arhitekturu programskog proizvoda. Obratite pozornost da bi arhitektura trebala biti višeslojna s odvojenom (dislociranom) bazom podatka. Također uzmite u obzir da bi svaki član tima treba biti odgovorana za otprilike 3 funkcionalnosti, te da bi opterećenje članova tima trebalo biti ujednačeno. Priložite odgovarajuće dijagrame i skice gdje je to prikladno. Funkcionalnosti sustava bobrojite u tablici ispod koristeći predložak koji slijedi:
