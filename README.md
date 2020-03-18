@@ -7,6 +7,7 @@ Ime i prezime | E-mail adresa (FOI) | JMBAG | Github korisničko ime
 Bruno Mataušić | bmatausic@foi.hr | 0016125251 | BrunoM223
 Robert Langus | rlangus@foi.hr | 0016122793 | DigitalDevelooper
 Luka Zrinski | lzrinski@foi.hr | 0016131570 | Zrinski34
+Tomislav Lukežić | tlukezic@foi.hr | 0016123418 | TLukezic
 
 ## Opis domene
 'CineManage' omogućuje upravljanje podacima vezanih uz kino, te prodaju i evidenciju za korisnike i administratore.     
