@@ -1,4 +1,4 @@
-# CineManage
+# PI20-065 CineManage
 
 ## Projektni tim
 
