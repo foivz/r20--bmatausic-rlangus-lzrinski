@@ -1,5 +1,5 @@
 # PI20-065 CineManage
-
+[Wiki stranica](https://github.com/foivz/r20--bmatausic-rlangus-lzrinski/wiki)
 ## Projektni tim
 
 Ime i prezime | E-mail adresa (FOI) | JMBAG | Github korisničko ime
