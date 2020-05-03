@@ -31,4 +31,4 @@ F08| Korištenje grafova i drugih vizualnih prikaza podataka | Na temelju podata
 * Visual Paradigm
 * Draw.io
 * Microsoft Project
-* 3 računala s Windows operacijskim sustavom
+* 4 računala s Windows operacijskim sustavom
