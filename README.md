@@ -24,7 +24,7 @@ F04 | Dodavanje, brisanje i ažuriranje podataka | Osoba koja se prijavi adminis
 F05 | Vođenje obračuna | Podaci o cjenama i broju prodanih ulaznica | Luka Zrinski
 F06| Podsjetnik za film | Ako korisnik ima kupljen ili rezerviran film, kod ulogiravanja će se pojaviti podsjetnik o navedenom filmu | Robert Langus
 F07| Kreiranje naprednih PDF izvješća | Na temelju podataka o poslovanju kreiraju se PDF izvješća | Tomislav Lukežić
-F08| Korištenje grafova i drugih vizualnih prikaza podataka | Na temelju podataka o poslovanju kreiraju se grafovi ua vizualni prikaz poslovanja | Robert Langus
+F08| Korištenje grafova i drugih vizualnih prikaza podataka | Na temelju podataka o poslovanju kreiraju se grafovi za vizualni prikaz poslovanja | Robert Langus
 
 ## Tehnologije i oprema
 * Visual Studio
