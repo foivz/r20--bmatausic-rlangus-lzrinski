@@ -1,0 +1,9 @@
+C:\Users\Develooper\source\repos\CineManageApp\CineManageApp\obj\Debug\CineManageApp.csprojAssemblyReference.cache
+C:\Users\Develooper\source\repos\CineManageApp\CineManageApp\obj\Debug\CineManageApp.Properties.Resources.resources
+C:\Users\Develooper\source\repos\CineManageApp\CineManageApp\obj\Debug\CineManageApp.csproj.GenerateResource.cache
+C:\Users\Develooper\source\repos\CineManageApp\CineManageApp\obj\Debug\CineManageApp.csproj.CoreCompileInputs.cache
+C:\Users\Develooper\source\repos\CineManageApp\CineManageApp\bin\Debug\CineManageApp.exe.config
+C:\Users\Develooper\source\repos\CineManageApp\CineManageApp\bin\Debug\CineManageApp.exe
+C:\Users\Develooper\source\repos\CineManageApp\CineManageApp\bin\Debug\CineManageApp.pdb
+C:\Users\Develooper\source\repos\CineManageApp\CineManageApp\obj\Debug\CineManageApp.exe
+C:\Users\Develooper\source\repos\CineManageApp\CineManageApp\obj\Debug\CineManageApp.pdb
