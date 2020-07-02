@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CineManageDBModelStoreContainer" CdmEntityContainer="CineManageEntities">
+    <EntitySetMapping Name="Dvoranas">
+      <EntityTypeMapping TypeName="CineManageDBModel.Dvorana">
+        <MappingFragment StoreEntitySet="Dvorana">
+          <ScalarProperty Name="dvorana_id" ColumnName="dvorana_id" />
+          <ScalarProperty Name="ime_dvorane" ColumnName="ime_dvorane" />
+          <ScalarProperty Name="popunjena_dvorana" ColumnName="popunjena_dvorana" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Films">
+      <EntityTypeMapping TypeName="CineManageDBModel.Film">
+        <MappingFragment StoreEntitySet="Film">
+          <ScalarProperty Name="film_id" ColumnName="film_id" />
+          <ScalarProperty Name="naslov" ColumnName="naslov" />
+          <ScalarProperty Name="readtelj" ColumnName="readtelj" />
+          <ScalarProperty Name="opis" ColumnName="opis" />
+          <ScalarProperty Name="trajanje" ColumnName="trajanje" />
+          <ScalarProperty Name="cijena" ColumnName="cijena" />
+          <ScalarProperty Name="kategorija_kategorija_id" ColumnName="kategorija_kategorija_id" />
+          <ScalarProperty Name="dvorana_dvorana_id" ColumnName="dvorana_dvorana_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kategorijas">
+      <EntityTypeMapping TypeName="CineManageDBModel.Kategorija">
+        <MappingFragment StoreEntitySet="Kategorija">
+          <ScalarProperty Name="kategorija_id" ColumnName="kategorija_id" />
+          <ScalarProperty Name="kategorija_ime" ColumnName="kategorija_ime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Korisniks">
+      <EntityTypeMapping TypeName="CineManageDBModel.Korisnik">
+        <MappingFragment StoreEntitySet="Korisnik">
+          <ScalarProperty Name="korisnik_id" ColumnName="korisnik_id" />
+          <ScalarProperty Name="ime" ColumnName="ime" />
+          <ScalarProperty Name="prezime" ColumnName="prezime" />
+          <ScalarProperty Name="korisnicko_ime" ColumnName="korisnicko_ime" />
+          <ScalarProperty Name="lozinka" ColumnName="lozinka" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="rola_id" ColumnName="rola_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prikazivanjes">
+      <EntityTypeMapping TypeName="CineManageDBModel.Prikazivanje">
+        <MappingFragment StoreEntitySet="Prikazivanje">
+          <ScalarProperty Name="prikazuje_se_id" ColumnName="prikazuje_se_id" />
+          <ScalarProperty Name="raspored_prikazivanja_idraspored_prikazivanja" ColumnName="raspored_prikazivanja_idraspored_prikazivanja" />
+          <ScalarProperty Name="film_film_id" ColumnName="film_film_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Raspored_Prikazivanja">
+      <EntityTypeMapping TypeName="CineManageDBModel.Raspored_Prikazivanja">
+        <MappingFragment StoreEntitySet="Raspored_Prikazivanja">
+          <ScalarProperty Name="raspored_prikazivanja_id" ColumnName="raspored_prikazivanja_id" />
+          <ScalarProperty Name="vrijeme_prikazivanja" ColumnName="vrijeme_prikazivanja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rezervacijas">
+      <EntityTypeMapping TypeName="CineManageDBModel.Rezervacija">
+        <MappingFragment StoreEntitySet="Rezervacija">
+          <ScalarProperty Name="rezervacija_id" ColumnName="rezervacija_id" />
+          <ScalarProperty Name="film_film_id" ColumnName="film_film_id" />
+          <ScalarProperty Name="sjedala_sjedalo_id" ColumnName="sjedala_sjedalo_id" />
+          <ScalarProperty Name="korisnik_korisnik_id" ColumnName="korisnik_korisnik_id" />
+          <ScalarProperty Name="raspored_prikazivanja_raspored_prikazivanja_id" ColumnName="raspored_prikazivanja_raspored_prikazivanja_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rolas">
+      <EntityTypeMapping TypeName="CineManageDBModel.Rola">
+        <MappingFragment StoreEntitySet="Rola">
+          <ScalarProperty Name="rola_id" ColumnName="rola_id" />
+          <ScalarProperty Name="ime_role" ColumnName="ime_role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sjedaloes">
+      <EntityTypeMapping TypeName="CineManageDBModel.Sjedalo">
+        <MappingFragment StoreEntitySet="Sjedalo">
+          <ScalarProperty Name="sjedalo_id" ColumnName="sjedalo_id" />
+          <ScalarProperty Name="mjesto" ColumnName="mjesto" />
+          <ScalarProperty Name="red" ColumnName="red" />
+          <ScalarProperty Name="dvorana_dvorana_id" ColumnName="dvorana_dvorana_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zauzetost_Sjedala">
+      <EntityTypeMapping TypeName="CineManageDBModel.Zauzetost_Sjedala">
+        <MappingFragment StoreEntitySet="Zauzetost_Sjedala">
+          <ScalarProperty Name="sjedalo_je_zauzeto_id" ColumnName="sjedalo_je_zauzeto_id" />
+          <ScalarProperty Name="zauzeto" ColumnName="zauzeto" />
+          <ScalarProperty Name="prikazuje_se_prikazuje_se_id" ColumnName="prikazuje_se_prikazuje_se_id" />
+          <ScalarProperty Name="sjedala_sjedalo_id" ColumnName="sjedala_sjedalo_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

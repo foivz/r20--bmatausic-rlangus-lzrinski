@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="165560008e354cc3a574140b719068e6" Name="Diagram1">
+        <EntityTypeShape EntityType="CineManageDBModel.Dvorana" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CineManageDBModel.Film" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="CineManageDBModel.Kategorija" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CineManageDBModel.Korisnik" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CineManageDBModel.Prikazivanje" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CineManageDBModel.Raspored_Prikazivanja" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CineManageDBModel.Rezervacija" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CineManageDBModel.Rola" Width="1.5" PointX="0.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CineManageDBModel.Sjedalo" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CineManageDBModel.Zauzetost_Sjedala" Width="1.5" PointX="7.5" PointY="6.625" IsExpanded="true" />
+        <AssociationConnector Association="CineManageDBModel.film_fk_film_dvorana1" ManuallyRouted="false" />
+        <AssociationConnector Association="CineManageDBModel.sjedala_fk_sjedala_dvorana1" ManuallyRouted="false" />
+        <AssociationConnector Association="CineManageDBModel.film_fk_film_kategorija1" ManuallyRouted="false" />
+        <AssociationConnector Association="CineManageDBModel.prikazuje_se_fk_prikazuje_se_film1" ManuallyRouted="false" />
+        <AssociationConnector Association="CineManageDBModel.rezervacija_fk_rezervacija_film1" ManuallyRouted="false" />
+        <AssociationConnector Association="CineManageDBModel.korisnik_fk_korisnik_rola" ManuallyRouted="false" />
+        <AssociationConnector Association="CineManageDBModel.rezervacija_fk_rezervacija_korisnik1" ManuallyRouted="false" />
+        <AssociationConnector Association="CineManageDBModel.prikazuje_se_fk_prikazuje_se_raspored_prikazivanja1" ManuallyRouted="false" />
+        <AssociationConnector Association="CineManageDBModel.sjedalo_je_zauzeto_fk_sjedalo_je_zauzeto_prikazuje_se1" ManuallyRouted="false" />
+        <AssociationConnector Association="CineManageDBModel.rezervacija_fk_rezervacija_raspored_prikazivanja1" ManuallyRouted="false" />
+        <AssociationConnector Association="CineManageDBModel.rezervacija_fk_rezervacija_sjedala1" ManuallyRouted="false" />
+        <AssociationConnector Association="CineManageDBModel.sjedalo_je_zauzeto_fk_sjedalo_je_zauzeto_sjedala1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

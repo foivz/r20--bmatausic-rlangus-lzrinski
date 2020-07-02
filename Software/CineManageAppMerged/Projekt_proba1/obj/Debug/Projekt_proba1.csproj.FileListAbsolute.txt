@@ -1,0 +1,92 @@
+C:\Users\HP Brand Store\source\repos\Projekt_proba1\Projekt_proba1\bin\Debug\Projekt_proba1.exe.config
+C:\Users\HP Brand Store\source\repos\Projekt_proba1\Projekt_proba1\bin\Debug\Projekt_proba1.exe
+C:\Users\HP Brand Store\source\repos\Projekt_proba1\Projekt_proba1\bin\Debug\Projekt_proba1.pdb
+C:\Users\HP Brand Store\source\repos\Projekt_proba1\Projekt_proba1\obj\Debug\Projekt_proba1.csprojAssemblyReference.cache
+C:\Users\HP Brand Store\source\repos\Projekt_proba1\Projekt_proba1\obj\Debug\Projekt_proba1.FormLogin.resources
+C:\Users\HP Brand Store\source\repos\Projekt_proba1\Projekt_proba1\obj\Debug\Projekt_proba1.Properties.Resources.resources
+C:\Users\HP Brand Store\source\repos\Projekt_proba1\Projekt_proba1\obj\Debug\Projekt_proba1.csproj.GenerateResource.cache
+C:\Users\HP Brand Store\source\repos\Projekt_proba1\Projekt_proba1\obj\Debug\Projekt_proba1.exe
+C:\Users\HP Brand Store\source\repos\Projekt_proba1\Projekt_proba1\obj\Debug\Projekt_proba1.pdb
+C:\Users\HP Brand Store\source\repos\Projekt_proba1\Projekt_proba1\obj\Debug\Projekt_proba1.FormStvaranjeKorisnika.resources
+C:\Users\HP Brand Store\source\repos\Projekt_proba1\Projekt_proba1\obj\Debug\Projekt_proba1.PregledFilmovaForm.resources
+C:\Users\HP Brand Store\source\repos\Projekt_proba1\Projekt_proba1\obj\Debug\Projekt_proba1.csproj.CoreCompileInputs.cache
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt_login_registracija_kod\Projekt_proba1\obj\Debug\Projekt_proba1.csprojAssemblyReference.cache
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt_login_registracija_kod\Projekt_proba1\obj\Debug\Projekt_proba1.FormLogin.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt_login_registracija_kod\Projekt_proba1\obj\Debug\Projekt_proba1.FormStvaranjeKorisnika.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt_login_registracija_kod\Projekt_proba1\obj\Debug\Projekt_proba1.Properties.Resources.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt_login_registracija_kod\Projekt_proba1\obj\Debug\Projekt_proba1.csproj.GenerateResource.cache
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt_login_registracija_kod\Projekt_proba1\obj\Debug\Projekt_proba1.csproj.CoreCompileInputs.cache
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt_login_registracija_kod\Projekt_proba1\obj\Debug\Projekt_proba1.exe
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt_login_registracija_kod\Projekt_proba1\obj\Debug\Projekt_proba1.pdb
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt_login_registracija_kod\Projekt_proba1\bin\Debug\Projekt_proba1.exe.config
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt_login_registracija_kod\Projekt_proba1\bin\Debug\Projekt_proba1.exe
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt_login_registracija_kod\Projekt_proba1\bin\Debug\Projekt_proba1.pdb
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt_login_registracija_kod\Projekt_proba1\bin\Debug\EntityFramework.dll
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt_login_registracija_kod\Projekt_proba1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt_login_registracija_kod\Projekt_proba1\bin\Debug\EntityFramework.xml
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt_login_registracija_kod\Projekt_proba1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt_login_registracija_kod\Projekt_proba1\obj\Debug\Projekt_proba1.csproj.CopyComplete
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt_login_registracija_kod\Projekt_proba1\obj\Debug\Projekt_proba1.FormPregledFIlmova.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt_login_registracija_kod\Projekt_proba1\bin\Debug\Projekt_proba1.exe.config
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt_login_registracija_kod\Projekt_proba1\bin\Debug\Projekt_proba1.exe
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt_login_registracija_kod\Projekt_proba1\bin\Debug\Projekt_proba1.pdb
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt_login_registracija_kod\Projekt_proba1\bin\Debug\EntityFramework.dll
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt_login_registracija_kod\Projekt_proba1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt_login_registracija_kod\Projekt_proba1\bin\Debug\EntityFramework.xml
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt_login_registracija_kod\Projekt_proba1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt_login_registracija_kod\Projekt_proba1\obj\Debug\Projekt_proba1.csprojAssemblyReference.cache
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt_login_registracija_kod\Projekt_proba1\obj\Debug\Projekt_proba1.FormLogin.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt_login_registracija_kod\Projekt_proba1\obj\Debug\Projekt_proba1.FormPregledFIlmova.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt_login_registracija_kod\Projekt_proba1\obj\Debug\Projekt_proba1.FormStvaranjeKorisnika.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt_login_registracija_kod\Projekt_proba1\obj\Debug\Projekt_proba1.Properties.Resources.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt_login_registracija_kod\Projekt_proba1\obj\Debug\Projekt_proba1.csproj.GenerateResource.cache
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt_login_registracija_kod\Projekt_proba1\obj\Debug\Projekt_proba1.csproj.CoreCompileInputs.cache
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt_login_registracija_kod\Projekt_proba1\obj\Debug\Projekt_proba1.csproj.CopyComplete
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt_login_registracija_kod\Projekt_proba1\obj\Debug\Projekt_proba1.exe
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt_login_registracija_kod\Projekt_proba1\obj\Debug\Projekt_proba1.pdb
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.csprojAssemblyReference.cache
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.FormAzuriranjeFilma.resources
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.FormDodavanjeFilma.resources
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.FormInformacijeFilm.resources
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.FormIzvjesceGraf.resources
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.FormLogin.resources
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.FormObracun.resources
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.FormPregledFIlmova.resources
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.FormRezervacijaUlaznica.resources
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.FormStvaranjeKorisnika.resources
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.Properties.Resources.resources
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.csproj.GenerateResource.cache
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.csproj.CoreCompileInputs.cache
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.exe
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.pdb
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.csprojAssemblyReference.cache
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.FormAzuriranjeFilma.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.FormDodavanjeFilma.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.FormInformacijeFilm.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.FormIzvjesceGraf.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.FormLogin.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.FormObracun.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.FormPregledFIlmova.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.FormRezervacijaUlaznica.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.FormStvaranjeKorisnika.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.Properties.Resources.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.csproj.GenerateResource.cache
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.csproj.CoreCompileInputs.cache
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.exe
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.pdb
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\bin\Debug\Projekt_proba1.exe.config
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\bin\Debug\Projekt_proba1.exe
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\bin\Debug\Projekt_proba1.pdb
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\bin\Debug\EntityFramework.dll
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\bin\Debug\EntityFramework.xml
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.csproj.CopyComplete
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\bin\Debug\Projekt_proba1.exe.config
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\bin\Debug\Projekt_proba1.exe
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\bin\Debug\Projekt_proba1.pdb
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\bin\Debug\EntityFramework.dll
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\bin\Debug\EntityFramework.SqlServer.dll
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\bin\Debug\EntityFramework.xml
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\bin\Debug\EntityFramework.SqlServer.xml
+c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.csproj.CopyComplete
