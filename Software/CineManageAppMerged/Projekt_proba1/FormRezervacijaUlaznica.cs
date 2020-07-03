@@ -65,7 +65,9 @@ namespace Projekt_proba1
             int brojacUlaznica = Int32.Parse(cboxBrojUlaznica.Text);
             double cijenaSuma = film.cijena * Int32.Parse(cboxBrojUlaznica.Text);
             lblInfoSuma.Text = cijenaSuma.ToString() + " kn";
-            /*gboxSjedala.Controls.Clear();   
+            /* implementacija više ulaznica
+             * 
+             * gboxSjedala.Controls.Clear();   
 
             for (int i = 0; i < brojacUlaznica-1; i++)
             {
