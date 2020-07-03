@@ -44,7 +44,7 @@ namespace Projekt_proba1
         private void PopuniCboxBrojUlaznica()
         {
             List<int> ulaznice = new List<int>();
-            for (int i = 1; i <= 20; i++)
+            for (int i = 1; i <= 5; i++)
             {
                 ulaznice.Add(i);
             }
@@ -58,6 +58,26 @@ namespace Projekt_proba1
             lblInfoDvoranaId.Text = film.dvorana_dvorana_id.ToString();
             lblInfoVrijemePrikaza.Text = vrijeme.vrijeme_prikazivanja.ToString();
             lblInfoCijena.Text = film.cijena.ToString() + " kn";
+        }
+
+        private void cboxBrojUlaznica_TextChanged(object sender, EventArgs e)
+        {
+            int brojacUlaznica = Int32.Parse(cboxBrojUlaznica.Text);
+            double cijenaSuma = film.cijena * Int32.Parse(cboxBrojUlaznica.Text);
+            lblInfoSuma.Text = cijenaSuma.ToString() + " kn";
+            /*gboxSjedala.Controls.Clear();   
+
+            for (int i = 0; i < brojacUlaznica-1; i++)
+            {
+                Label t1 = new Label();
+                this.Controls.Add(t1);
+                t1.Top = 470 + (i*25);
+                t1.Left = 270;
+                t1.Text = "Odaverite sjedalo: ${i} ";
+                t1.BringToFront();
+
+
+            }*/
         }
     }
 }
