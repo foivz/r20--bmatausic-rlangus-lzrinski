@@ -39,7 +39,9 @@ namespace Projekt_proba1
                     if (korisnik.lozinka == lozinka)
                     {
                         FormPregledFilmova frm = new FormPregledFilmova(korisnik);
+                        this.Hide();
                         frm.ShowDialog();
+                        this.Show();
                     }
                     else
                         MessageBox.Show("Kriva lozinka!");
@@ -90,7 +92,9 @@ namespace Projekt_proba1
         private void btnNeregistrirani_Click(object sender, EventArgs e)
         {
             FormPregledFilmova frm = new FormPregledFilmova();
+            this.Hide();
             frm.ShowDialog();
+            this.Show();
         }
     }
 }

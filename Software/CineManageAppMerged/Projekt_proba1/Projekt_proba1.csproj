@@ -135,6 +135,7 @@
     <Compile Include="FunkcijeLoginRegistracija.cs" />
     <Compile Include="Iznimke\DodavanjeKorisnikaException.cs" />
     <Compile Include="Iznimke\LoginException.cs" />
+    <Compile Include="Iznimke\NeregistriraniKorisnikException.cs" />
     <Compile Include="Kategorija.code.cs" />
     <Compile Include="Kategorija.cs">
       <DependentUpon>CineManageModel.tt</DependentUpon>
@@ -147,6 +148,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Raspored_Prikazivanja.code.cs" />
     <Compile Include="Raspored_Prikazivanja.cs">
       <DependentUpon>CineManageModel.tt</DependentUpon>
     </Compile>
@@ -157,6 +159,7 @@
       <DependentUpon>CineManageModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Role.code.cs" />
+    <Compile Include="Sjedalo.code.cs" />
     <Compile Include="Sjedalo.cs">
       <DependentUpon>CineManageModel.tt</DependentUpon>
     </Compile>

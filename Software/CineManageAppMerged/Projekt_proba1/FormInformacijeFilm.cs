@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projekt_proba1.Iznimke;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,12 +30,50 @@ namespace Projekt_proba1
 
         private void FormInformacijeFilm_Load(object sender, EventArgs e)
         {
-            if (korisnik != null) lblKorisnickoIme.Text = korisnik.korisnicko_ime;
-            else lblKorisnickoIme.Text = "Guest";
+            if (korisnik != null)
+            {
+                lblKorisnickoIme.Text = korisnik.korisnicko_ime;
+                btnPrijava.Visible = false;
+            }
+            else
+            {
+                lblKorisnickoIme.Text = "Guest";
+                btnOdjava.Visible = false;
+            }
             lblFilmIme.Text = film.naslov;
             lblRedateljFilma.Text = film.readtelj;
-            lblSadrzajFilma.Text = film.opis;
+            txtSadrzaj.Text = film.opis;
             lblDvoranaId.Text = film.dvorana_dvorana_id.ToString();
+            FillcboxVrijeme();
+        }
+
+        private void FillcboxVrijeme()
+        {
+            using (var context = new CineManageEntities())
+            {
+                var query = from p in context.Prikazivanjes
+                            where film.film_id == p.film_film_id
+                            select p.Raspored_Prikazivanja;
+                cboxVrijeme.DataSource = query.ToList();
+            }
+        }
+
+        private void btnRezervirajKartu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Raspored_Prikazivanja vrijeme = cboxVrijeme.SelectedItem as Raspored_Prikazivanja;
+                if(korisnik == null)
+                {
+                    throw new NeregistriraniKorisnikException("Kako bi mogli koristiti ovu funkcionalnost, morate se ulogirati!");
+                }
+                FormRezervacijaUlaznica form = new FormRezervacijaUlaznica(korisnik, film, vrijeme);
+                form.ShowDialog();
+            }
+            catch (Iznimke.NeregistriraniKorisnikException ex)
+            {
+                MessageBox.Show(ex.Poruka);
+            }
         }
     }
 }

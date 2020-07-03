@@ -31,9 +31,11 @@ namespace Projekt_proba1
             if (korisnik == null)
             {
                 lblKorisnickoIme.Text = "Guest";
+                btnOdjava.Visible = false;
             }
             else
             {
+                btnPrijava.Visible = false;
                 lblKorisnickoIme.Text = korisnik.korisnicko_ime;
                 if(korisnik.rola_id == 1)
                 {
@@ -171,13 +173,27 @@ namespace Projekt_proba1
             if (korisnik != null)
             {
                 FormInformacijeFilm frm = new FormInformacijeFilm(odabraniFilm, korisnik);
+                this.Hide();
                 frm.ShowDialog();
+                this.Show();
             }
             else
             {
                 FormInformacijeFilm frm = new FormInformacijeFilm(odabraniFilm);
+                this.Hide();
                 frm.ShowDialog();
+                this.Show();
             }
+        }
+
+        private void btnOdjava_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnPrijava_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

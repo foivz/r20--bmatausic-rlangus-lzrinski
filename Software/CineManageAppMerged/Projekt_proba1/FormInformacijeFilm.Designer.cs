@@ -40,11 +40,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblFilmIme = new System.Windows.Forms.Label();
-            this.lblVrijemePrikaza = new System.Windows.Forms.Label();
             this.lblRedateljFilma = new System.Windows.Forms.Label();
             this.lblDvoranaId = new System.Windows.Forms.Label();
-            this.lblSadrzajFilma = new System.Windows.Forms.Label();
             this.pboxFilmCover = new System.Windows.Forms.PictureBox();
+            this.txtSadrzaj = new System.Windows.Forms.TextBox();
+            this.cboxVrijeme = new System.Windows.Forms.ComboBox();
+            this.btnPrijava = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pboxKinoSlika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxFilmCover)).BeginInit();
@@ -54,7 +55,7 @@
             // 
             this.btnOdjava.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnOdjava.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOdjava.Location = new System.Drawing.Point(657, 7);
+            this.btnOdjava.Location = new System.Drawing.Point(638, 12);
             this.btnOdjava.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOdjava.Name = "btnOdjava";
             this.btnOdjava.Size = new System.Drawing.Size(99, 28);
@@ -84,13 +85,14 @@
             // 
             // btnRezervirajKartu
             // 
-            this.btnRezervirajKartu.Location = new System.Drawing.Point(503, 497);
+            this.btnRezervirajKartu.Location = new System.Drawing.Point(479, 506);
             this.btnRezervirajKartu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRezervirajKartu.Name = "btnRezervirajKartu";
             this.btnRezervirajKartu.Size = new System.Drawing.Size(253, 28);
             this.btnRezervirajKartu.TabIndex = 19;
             this.btnRezervirajKartu.Text = "Rezerviraj ulaznicu";
             this.btnRezervirajKartu.UseVisualStyleBackColor = true;
+            this.btnRezervirajKartu.Click += new System.EventHandler(this.btnRezervirajKartu_Click);
             // 
             // lblKorisnickoIme
             // 
@@ -98,7 +100,7 @@
             this.lblKorisnickoIme.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.lblKorisnickoIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKorisnickoIme.ForeColor = System.Drawing.Color.FloralWhite;
-            this.lblKorisnickoIme.Location = new System.Drawing.Point(555, 11);
+            this.lblKorisnickoIme.Location = new System.Drawing.Point(527, 15);
             this.lblKorisnickoIme.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblKorisnickoIme.Name = "lblKorisnickoIme";
             this.lblKorisnickoIme.Size = new System.Drawing.Size(87, 20);
@@ -111,7 +113,7 @@
             this.pictureBox2.Location = new System.Drawing.Point(-3, 0);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(787, 46);
+            this.pictureBox2.Size = new System.Drawing.Size(753, 46);
             this.pictureBox2.TabIndex = 24;
             this.pictureBox2.TabStop = false;
             // 
@@ -119,7 +121,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(248, 246);
+            this.label2.Location = new System.Drawing.Point(276, 247);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 20);
@@ -130,7 +132,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(248, 314);
+            this.label3.Location = new System.Drawing.Point(242, 314);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 20);
@@ -152,7 +154,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(248, 346);
+            this.label5.Location = new System.Drawing.Point(243, 347);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 20);
@@ -163,7 +165,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(248, 378);
+            this.label6.Location = new System.Drawing.Point(248, 380);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 20);
@@ -174,29 +176,18 @@
             // 
             this.lblFilmIme.AutoSize = true;
             this.lblFilmIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFilmIme.Location = new System.Drawing.Point(311, 246);
+            this.lblFilmIme.Location = new System.Drawing.Point(344, 247);
             this.lblFilmIme.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFilmIme.Name = "lblFilmIme";
             this.lblFilmIme.Size = new System.Drawing.Size(31, 18);
             this.lblFilmIme.TabIndex = 34;
             this.lblFilmIme.Text = "film";
             // 
-            // lblVrijemePrikaza
-            // 
-            this.lblVrijemePrikaza.AutoSize = true;
-            this.lblVrijemePrikaza.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVrijemePrikaza.Location = new System.Drawing.Point(343, 279);
-            this.lblVrijemePrikaza.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblVrijemePrikaza.Name = "lblVrijemePrikaza";
-            this.lblVrijemePrikaza.Size = new System.Drawing.Size(55, 18);
-            this.lblVrijemePrikaza.TabIndex = 35;
-            this.lblVrijemePrikaza.Text = "vrijeme";
-            // 
             // lblRedateljFilma
             // 
             this.lblRedateljFilma.AutoSize = true;
             this.lblRedateljFilma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedateljFilma.Location = new System.Drawing.Point(351, 346);
+            this.lblRedateljFilma.Location = new System.Drawing.Point(344, 348);
             this.lblRedateljFilma.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRedateljFilma.Name = "lblRedateljFilma";
             this.lblRedateljFilma.Size = new System.Drawing.Size(55, 18);
@@ -207,23 +198,12 @@
             // 
             this.lblDvoranaId.AutoSize = true;
             this.lblDvoranaId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDvoranaId.Location = new System.Drawing.Point(351, 314);
+            this.lblDvoranaId.Location = new System.Drawing.Point(344, 314);
             this.lblDvoranaId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDvoranaId.Name = "lblDvoranaId";
             this.lblDvoranaId.Size = new System.Drawing.Size(61, 18);
             this.lblDvoranaId.TabIndex = 37;
             this.lblDvoranaId.Text = "dvorana";
-            // 
-            // lblSadrzajFilma
-            // 
-            this.lblSadrzajFilma.AutoSize = true;
-            this.lblSadrzajFilma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSadrzajFilma.Location = new System.Drawing.Point(344, 378);
-            this.lblSadrzajFilma.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblSadrzajFilma.Name = "lblSadrzajFilma";
-            this.lblSadrzajFilma.Size = new System.Drawing.Size(56, 18);
-            this.lblSadrzajFilma.TabIndex = 38;
-            this.lblSadrzajFilma.Text = "sadrzaj";
             // 
             // pboxFilmCover
             // 
@@ -234,16 +214,46 @@
             this.pboxFilmCover.TabIndex = 39;
             this.pboxFilmCover.TabStop = false;
             // 
+            // txtSadrzaj
+            // 
+            this.txtSadrzaj.Location = new System.Drawing.Point(347, 380);
+            this.txtSadrzaj.Multiline = true;
+            this.txtSadrzaj.Name = "txtSadrzaj";
+            this.txtSadrzaj.ReadOnly = true;
+            this.txtSadrzaj.Size = new System.Drawing.Size(310, 99);
+            this.txtSadrzaj.TabIndex = 40;
+            // 
+            // cboxVrijeme
+            // 
+            this.cboxVrijeme.FormattingEnabled = true;
+            this.cboxVrijeme.Location = new System.Drawing.Point(347, 279);
+            this.cboxVrijeme.Name = "cboxVrijeme";
+            this.cboxVrijeme.Size = new System.Drawing.Size(186, 24);
+            this.cboxVrijeme.TabIndex = 41;
+            // 
+            // btnPrijava
+            // 
+            this.btnPrijava.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPrijava.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrijava.Location = new System.Drawing.Point(638, 54);
+            this.btnPrijava.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPrijava.Name = "btnPrijava";
+            this.btnPrijava.Size = new System.Drawing.Size(99, 28);
+            this.btnPrijava.TabIndex = 42;
+            this.btnPrijava.Text = "Prijavi se";
+            this.btnPrijava.UseVisualStyleBackColor = false;
+            // 
             // FormInformacijeFilm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 565);
+            this.ClientSize = new System.Drawing.Size(750, 547);
+            this.Controls.Add(this.btnPrijava);
+            this.Controls.Add(this.cboxVrijeme);
+            this.Controls.Add(this.txtSadrzaj);
             this.Controls.Add(this.pboxFilmCover);
-            this.Controls.Add(this.lblSadrzajFilma);
             this.Controls.Add(this.lblDvoranaId);
             this.Controls.Add(this.lblRedateljFilma);
-            this.Controls.Add(this.lblVrijemePrikaza);
             this.Controls.Add(this.lblFilmIme);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -281,10 +291,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblFilmIme;
-        private System.Windows.Forms.Label lblVrijemePrikaza;
         private System.Windows.Forms.Label lblRedateljFilma;
         private System.Windows.Forms.Label lblDvoranaId;
-        private System.Windows.Forms.Label lblSadrzajFilma;
         private System.Windows.Forms.PictureBox pboxFilmCover;
+        private System.Windows.Forms.TextBox txtSadrzaj;
+        private System.Windows.Forms.ComboBox cboxVrijeme;
+        private System.Windows.Forms.Button btnPrijava;
     }
 }
