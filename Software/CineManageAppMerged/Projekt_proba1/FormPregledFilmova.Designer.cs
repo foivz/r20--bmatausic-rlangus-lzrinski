@@ -50,6 +50,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cboxKategorije = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnOdaberiFilm = new System.Windows.Forms.Button();
             this.gboxUrediFilmove.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFilmovi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxKinoSlika)).BeginInit();
@@ -75,7 +76,7 @@
             // 
             this.btnDodajNoviFilm.Location = new System.Drawing.Point(10, 26);
             this.btnDodajNoviFilm.Name = "btnDodajNoviFilm";
-            this.btnDodajNoviFilm.Size = new System.Drawing.Size(144, 20);
+            this.btnDodajNoviFilm.Size = new System.Drawing.Size(75, 20);
             this.btnDodajNoviFilm.TabIndex = 5;
             this.btnDodajNoviFilm.Text = "Dodaj";
             this.btnDodajNoviFilm.UseVisualStyleBackColor = true;
@@ -84,7 +85,7 @@
             // 
             this.btnAzurirajFilm.Location = new System.Drawing.Point(10, 93);
             this.btnAzurirajFilm.Name = "btnAzurirajFilm";
-            this.btnAzurirajFilm.Size = new System.Drawing.Size(144, 20);
+            this.btnAzurirajFilm.Size = new System.Drawing.Size(75, 20);
             this.btnAzurirajFilm.TabIndex = 6;
             this.btnAzurirajFilm.Text = "Ažuriraj";
             this.btnAzurirajFilm.UseVisualStyleBackColor = true;
@@ -93,7 +94,7 @@
             // 
             this.btnObrisi.Location = new System.Drawing.Point(10, 61);
             this.btnObrisi.Name = "btnObrisi";
-            this.btnObrisi.Size = new System.Drawing.Size(144, 20);
+            this.btnObrisi.Size = new System.Drawing.Size(75, 20);
             this.btnObrisi.TabIndex = 8;
             this.btnObrisi.Text = "Obriši";
             this.btnObrisi.UseVisualStyleBackColor = true;
@@ -124,7 +125,7 @@
             this.lblKorisnickoIme.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.lblKorisnickoIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKorisnickoIme.ForeColor = System.Drawing.Color.FloralWhite;
-            this.lblKorisnickoIme.Location = new System.Drawing.Point(482, 11);
+            this.lblKorisnickoIme.Location = new System.Drawing.Point(488, 15);
             this.lblKorisnickoIme.Name = "lblKorisnickoIme";
             this.lblKorisnickoIme.Size = new System.Drawing.Size(69, 16);
             this.lblKorisnickoIme.TabIndex = 21;
@@ -163,7 +164,7 @@
             // 
             this.btnOdjava.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnOdjava.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOdjava.Location = new System.Drawing.Point(558, 7);
+            this.btnOdjava.Location = new System.Drawing.Point(565, 8);
             this.btnOdjava.Name = "btnOdjava";
             this.btnOdjava.Size = new System.Drawing.Size(74, 23);
             this.btnOdjava.TabIndex = 16;
@@ -191,9 +192,9 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.pictureBox2.Location = new System.Drawing.Point(-6, -6);
+            this.pictureBox2.Location = new System.Drawing.Point(-4, -6);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(671, 45);
+            this.pictureBox2.Size = new System.Drawing.Size(653, 45);
             this.pictureBox2.TabIndex = 24;
             this.pictureBox2.TabStop = false;
             // 
@@ -241,7 +242,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 105);
+            this.label4.Location = new System.Drawing.Point(4, 105);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 13);
@@ -259,7 +260,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 68);
+            this.label3.Location = new System.Drawing.Point(-1, 68);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 13);
@@ -278,18 +279,29 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(52, 33);
+            this.label2.Location = new System.Drawing.Point(46, 33);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 19;
             this.label2.Text = "Kategorija";
             // 
+            // btnOdaberiFilm
+            // 
+            this.btnOdaberiFilm.Location = new System.Drawing.Point(539, 92);
+            this.btnOdaberiFilm.Name = "btnOdaberiFilm";
+            this.btnOdaberiFilm.Size = new System.Drawing.Size(93, 50);
+            this.btnOdaberiFilm.TabIndex = 26;
+            this.btnOdaberiFilm.Text = "Odaberi film";
+            this.btnOdaberiFilm.UseVisualStyleBackColor = true;
+            this.btnOdaberiFilm.Click += new System.EventHandler(this.btnOdaberiFilm_Click);
+            // 
             // FormPregledFilmova
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 557);
+            this.ClientSize = new System.Drawing.Size(647, 557);
+            this.Controls.Add(this.btnOdaberiFilm);
             this.Controls.Add(this.gboxUrediFilmove);
             this.Controls.Add(this.lblKorisnickoIme);
             this.Controls.Add(this.dgvFilmovi);
@@ -337,5 +349,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnFilterKategorija;
         private System.Windows.Forms.Button btnFilterNaziv;
+        private System.Windows.Forms.Button btnOdaberiFilm;
     }
 }

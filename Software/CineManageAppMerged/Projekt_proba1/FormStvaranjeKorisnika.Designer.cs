@@ -199,7 +199,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 366);
+            this.ClientSize = new System.Drawing.Size(726, 366);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.txtIme);
             this.Controls.Add(this.txtPrezime);

@@ -156,5 +156,28 @@ namespace Projekt_proba1
                 dgvFilmovi.DataSource = query.Distinct().ToList();
             }
         }
+
+        private void btnOdaberiFilm_Click(object sender, EventArgs e)
+        {
+            FilmView odabrani = dgvFilmovi.CurrentRow.DataBoundItem as FilmView;
+            Film odabraniFilm;
+            using (var context = new CineManageEntities())
+            {
+                var query = from f in context.Films
+                            where f.film_id == odabrani.film_id
+                            select f;
+                odabraniFilm = query.Single();
+            }
+            if (korisnik != null)
+            {
+                FormInformacijeFilm frm = new FormInformacijeFilm(odabraniFilm, korisnik);
+                frm.ShowDialog();
+            }
+            else
+            {
+                FormInformacijeFilm frm = new FormInformacijeFilm(odabraniFilm);
+                frm.ShowDialog();
+            }
+        }
     }
 }
