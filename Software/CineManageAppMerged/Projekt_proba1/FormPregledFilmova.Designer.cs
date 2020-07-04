@@ -76,34 +76,34 @@
             // 
             // btnDodajNoviFilm
             // 
-            this.btnDodajNoviFilm.Location = new System.Drawing.Point(10, 26);
+            this.btnDodajNoviFilm.Location = new System.Drawing.Point(16, 26);
             this.btnDodajNoviFilm.Name = "btnDodajNoviFilm";
-            this.btnDodajNoviFilm.Size = new System.Drawing.Size(75, 20);
+            this.btnDodajNoviFilm.Size = new System.Drawing.Size(144, 20);
             this.btnDodajNoviFilm.TabIndex = 5;
             this.btnDodajNoviFilm.Text = "Dodaj";
             this.btnDodajNoviFilm.UseVisualStyleBackColor = true;
             // 
             // btnAzurirajFilm
             // 
-            this.btnAzurirajFilm.Location = new System.Drawing.Point(10, 93);
+            this.btnAzurirajFilm.Location = new System.Drawing.Point(16, 93);
             this.btnAzurirajFilm.Name = "btnAzurirajFilm";
-            this.btnAzurirajFilm.Size = new System.Drawing.Size(75, 20);
+            this.btnAzurirajFilm.Size = new System.Drawing.Size(144, 20);
             this.btnAzurirajFilm.TabIndex = 6;
             this.btnAzurirajFilm.Text = "Ažuriraj";
             this.btnAzurirajFilm.UseVisualStyleBackColor = true;
             // 
             // btnObrisi
             // 
-            this.btnObrisi.Location = new System.Drawing.Point(10, 61);
+            this.btnObrisi.Location = new System.Drawing.Point(16, 61);
             this.btnObrisi.Name = "btnObrisi";
-            this.btnObrisi.Size = new System.Drawing.Size(75, 20);
+            this.btnObrisi.Size = new System.Drawing.Size(144, 20);
             this.btnObrisi.TabIndex = 8;
             this.btnObrisi.Text = "Obriši";
             this.btnObrisi.UseVisualStyleBackColor = true;
             // 
             // btnPrikazPosovanja
             // 
-            this.btnPrikazPosovanja.Location = new System.Drawing.Point(10, 126);
+            this.btnPrikazPosovanja.Location = new System.Drawing.Point(16, 126);
             this.btnPrikazPosovanja.Name = "btnPrikazPosovanja";
             this.btnPrikazPosovanja.Size = new System.Drawing.Size(144, 23);
             this.btnPrikazPosovanja.TabIndex = 19;
@@ -115,7 +115,7 @@
             // 
             this.dtPickerDatum.CustomFormat = "\"yyyy-MM-dd hh:mm:ss tt\"";
             this.dtPickerDatum.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtPickerDatum.Location = new System.Drawing.Point(116, 101);
+            this.dtPickerDatum.Location = new System.Drawing.Point(129, 101);
             this.dtPickerDatum.Name = "dtPickerDatum";
             this.dtPickerDatum.Size = new System.Drawing.Size(152, 20);
             this.dtPickerDatum.TabIndex = 22;
@@ -127,7 +127,7 @@
             this.lblKorisnickoIme.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.lblKorisnickoIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKorisnickoIme.ForeColor = System.Drawing.Color.FloralWhite;
-            this.lblKorisnickoIme.Location = new System.Drawing.Point(492, 11);
+            this.lblKorisnickoIme.Location = new System.Drawing.Point(508, 8);
             this.lblKorisnickoIme.Name = "lblKorisnickoIme";
             this.lblKorisnickoIme.Size = new System.Drawing.Size(69, 16);
             this.lblKorisnickoIme.TabIndex = 21;
@@ -139,12 +139,12 @@
             this.dgvFilmovi.Location = new System.Drawing.Point(20, 167);
             this.dgvFilmovi.Name = "dgvFilmovi";
             this.dgvFilmovi.RowHeadersWidth = 51;
-            this.dgvFilmovi.Size = new System.Drawing.Size(613, 205);
+            this.dgvFilmovi.Size = new System.Drawing.Size(642, 205);
             this.dgvFilmovi.TabIndex = 20;
             // 
             // btnFilterDatum
             // 
-            this.btnFilterDatum.Location = new System.Drawing.Point(287, 100);
+            this.btnFilterDatum.Location = new System.Drawing.Point(300, 100);
             this.btnFilterDatum.Name = "btnFilterDatum";
             this.btnFilterDatum.Size = new System.Drawing.Size(117, 23);
             this.btnFilterDatum.TabIndex = 18;
@@ -154,7 +154,7 @@
             // 
             // btnPocetniPrikaz
             // 
-            this.btnPocetniPrikaz.Location = new System.Drawing.Point(151, 133);
+            this.btnPocetniPrikaz.Location = new System.Drawing.Point(164, 133);
             this.btnPocetniPrikaz.Name = "btnPocetniPrikaz";
             this.btnPocetniPrikaz.Size = new System.Drawing.Size(108, 23);
             this.btnPocetniPrikaz.TabIndex = 17;
@@ -166,7 +166,7 @@
             // 
             this.btnOdjava.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnOdjava.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOdjava.Location = new System.Drawing.Point(563, 8);
+            this.btnOdjava.Location = new System.Drawing.Point(588, 5);
             this.btnOdjava.Name = "btnOdjava";
             this.btnOdjava.Size = new System.Drawing.Size(74, 23);
             this.btnOdjava.TabIndex = 16;
@@ -198,7 +198,7 @@
             this.pictureBox2.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.pictureBox2.Location = new System.Drawing.Point(-1, -4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(650, 37);
+            this.pictureBox2.Size = new System.Drawing.Size(680, 37);
             this.pictureBox2.TabIndex = 24;
             this.pictureBox2.TabStop = false;
             // 
@@ -215,17 +215,17 @@
             this.gboxFilter.Controls.Add(this.btnFilterDatum);
             this.gboxFilter.Controls.Add(this.btnPocetniPrikaz);
             this.gboxFilter.Location = new System.Drawing.Point(203, 385);
-            this.gboxFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gboxFilter.Margin = new System.Windows.Forms.Padding(2);
             this.gboxFilter.Name = "gboxFilter";
-            this.gboxFilter.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.gboxFilter.Size = new System.Drawing.Size(429, 162);
+            this.gboxFilter.Padding = new System.Windows.Forms.Padding(2);
+            this.gboxFilter.Size = new System.Drawing.Size(459, 162);
             this.gboxFilter.TabIndex = 25;
             this.gboxFilter.TabStop = false;
             this.gboxFilter.Text = "Filtriranje";
             // 
             // btnFilterKategorija
             // 
-            this.btnFilterKategorija.Location = new System.Drawing.Point(287, 28);
+            this.btnFilterKategorija.Location = new System.Drawing.Point(300, 28);
             this.btnFilterKategorija.Name = "btnFilterKategorija";
             this.btnFilterKategorija.Size = new System.Drawing.Size(117, 23);
             this.btnFilterKategorija.TabIndex = 25;
@@ -235,7 +235,7 @@
             // 
             // btnFilterNaziv
             // 
-            this.btnFilterNaziv.Location = new System.Drawing.Point(287, 63);
+            this.btnFilterNaziv.Location = new System.Drawing.Point(300, 63);
             this.btnFilterNaziv.Name = "btnFilterNaziv";
             this.btnFilterNaziv.Size = new System.Drawing.Size(117, 23);
             this.btnFilterNaziv.TabIndex = 24;
@@ -246,7 +246,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(4, 105);
+            this.label4.Location = new System.Drawing.Point(17, 105);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 13);
@@ -255,8 +255,8 @@
             // 
             // txtNazivFilter
             // 
-            this.txtNazivFilter.Location = new System.Drawing.Point(116, 66);
-            this.txtNazivFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNazivFilter.Location = new System.Drawing.Point(129, 66);
+            this.txtNazivFilter.Margin = new System.Windows.Forms.Padding(2);
             this.txtNazivFilter.Name = "txtNazivFilter";
             this.txtNazivFilter.Size = new System.Drawing.Size(164, 20);
             this.txtNazivFilter.TabIndex = 22;
@@ -264,7 +264,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(-1, 68);
+            this.label3.Location = new System.Drawing.Point(12, 68);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 13);
@@ -274,8 +274,8 @@
             // cboxKategorije
             // 
             this.cboxKategorije.FormattingEnabled = true;
-            this.cboxKategorije.Location = new System.Drawing.Point(116, 31);
-            this.cboxKategorije.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboxKategorije.Location = new System.Drawing.Point(129, 31);
+            this.cboxKategorije.Margin = new System.Windows.Forms.Padding(2);
             this.cboxKategorije.Name = "cboxKategorije";
             this.cboxKategorije.Size = new System.Drawing.Size(106, 21);
             this.cboxKategorije.TabIndex = 20;
@@ -283,7 +283,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 33);
+            this.label2.Location = new System.Drawing.Point(59, 33);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
@@ -292,9 +292,9 @@
             // 
             // btnOdaberiFilm
             // 
-            this.btnOdaberiFilm.Location = new System.Drawing.Point(539, 92);
+            this.btnOdaberiFilm.Location = new System.Drawing.Point(569, 127);
             this.btnOdaberiFilm.Name = "btnOdaberiFilm";
-            this.btnOdaberiFilm.Size = new System.Drawing.Size(93, 50);
+            this.btnOdaberiFilm.Size = new System.Drawing.Size(93, 34);
             this.btnOdaberiFilm.TabIndex = 26;
             this.btnOdaberiFilm.Text = "Odaberi film";
             this.btnOdaberiFilm.UseVisualStyleBackColor = true;
@@ -304,7 +304,7 @@
             // 
             this.btnPrijava.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnPrijava.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrijava.Location = new System.Drawing.Point(563, 8);
+            this.btnPrijava.Location = new System.Drawing.Point(588, 5);
             this.btnPrijava.Name = "btnPrijava";
             this.btnPrijava.Size = new System.Drawing.Size(74, 23);
             this.btnPrijava.TabIndex = 27;
@@ -316,7 +316,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(647, 557);
+            this.ClientSize = new System.Drawing.Size(675, 557);
             this.Controls.Add(this.btnPrijava);
             this.Controls.Add(this.btnOdaberiFilm);
             this.Controls.Add(this.gboxUrediFilmove);
@@ -327,7 +327,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.gboxFilter);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormPregledFilmova";
             this.Text = "FormPregledFilmova";
             this.Load += new System.EventHandler(this.FormPregledFilmova_Load);

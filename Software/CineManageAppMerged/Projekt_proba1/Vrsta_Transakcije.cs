@@ -12,29 +12,18 @@ namespace Projekt_proba1
     using System;
     using System.Collections.Generic;
     
-    public partial class Film
+    public partial class Vrsta_Transakcije
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Film()
+        public Vrsta_Transakcije()
         {
             this.Rezervacijas = new HashSet<Rezervacija>();
-            this.Prikazivanjes = new HashSet<Prikazivanje>();
         }
     
-        public int film_id { get; set; }
-        public string naslov { get; set; }
-        public string readtelj { get; set; }
-        public string opis { get; set; }
-        public int trajanje { get; set; }
-        public double cijena { get; set; }
-        public int kategorija_kategorija_id { get; set; }
-        public int dvorana_dvorana_id { get; set; }
+        public int vrsta_transakcije_id { get; set; }
+        public string naziv_transakcije { get; set; }
     
-        public virtual Dvorana Dvorana { get; set; }
-        public virtual Kategorija Kategorija { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Rezervacija> Rezervacijas { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Prikazivanje> Prikazivanjes { get; set; }
     }
 }

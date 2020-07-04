@@ -35,5 +35,6 @@ namespace Projekt_proba1
         public virtual DbSet<Rola> Rolas { get; set; }
         public virtual DbSet<Sjedalo> Sjedaloes { get; set; }
         public virtual DbSet<Zauzetost_Sjedala> Zauzetost_Sjedala { get; set; }
+        public virtual DbSet<Vrsta_Transakcije> Vrsta_Transakcije { get; set; }
     }
 }

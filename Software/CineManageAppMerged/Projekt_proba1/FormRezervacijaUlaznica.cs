@@ -36,7 +36,7 @@ namespace Projekt_proba1
         {
             using (var context = new CineManageEntities())
             {
-                var query = from r in context.Rezervacijas.Include("Film").Include("Korisnik").Include("Raspored_Prikazivanja").Include("Sjedalo")
+                var query = from r in context.Rezervacijas.Include("Film").Include("Korisnik").Include("Raspored_Prikazivanja").Include("Sjedalo").Include("Vrsta_Transakcije")
                             select r;
                 dgvRezervacije.DataSource = query.ToList();
                 dgvRezervacije.Columns["film_film_id"].Visible = false;
@@ -92,13 +92,13 @@ namespace Projekt_proba1
             {
                 sjedala.Add(odabrano);
             }
-            lblInfoSuma.Text = (film.cijena * sjedala.Count()).ToString() + " kn";
             RefreshDGV();
         }
 
         private void cboxBrojUlaznica_SelectedIndexChanged(object sender, EventArgs e)
         {
             sjedala = new BindingList<Sjedalo>();
+            lblInfoSuma.Text = (film.cijena * (cboxBrojUlaznica.SelectedIndex+1)).ToString() + " kn";
             RefreshDGV();
         }
 
@@ -114,6 +114,7 @@ namespace Projekt_proba1
 
         private void btnPotvrdaRezervacije_Click(object sender, EventArgs e)
         {
+            Vrsta_Transakcije vrsta;
             foreach (Sjedalo s in sjedala)
             {
                 using (var context = new CineManageEntities())
@@ -124,16 +125,27 @@ namespace Projekt_proba1
                     Zauzetost_Sjedala zauzetost = query.Single();
                     zauzetost.zauzeto = 1;
 
-                    context.Films.Attach(film);
-                    context.Sjedaloes.Attach(s);
-                    context.Korisniks.Attach(korisnik);
-                    context.Raspored_Prikazivanja.Attach(vrijeme);
+                    if(rbtnKupnja.Checked == true)
+                    {
+                        var queryVrsta1 = from v in context.Vrsta_Transakcije
+                                     where v.naziv_transakcije == "Kupnja"
+                                     select v;
+                        vrsta = queryVrsta1.Single();
+                    }
+                    else
+                    {
+                        var queryVrsta2 = from v in context.Vrsta_Transakcije
+                                          where v.naziv_transakcije == "Rezervacija"
+                                          select v;
+                        vrsta = queryVrsta2.Single();
+                    }
                     Rezervacija rezervacija = new Rezervacija
                     {
-                        Film = film,
-                        Sjedalo = s,
-                        Korisnik = korisnik,
-                        Raspored_Prikazivanja = vrijeme
+                        film_film_id = film.film_id,
+                        sjedala_sjedalo_id = s.sjedalo_id,
+                        korisnik_korisnik_id = korisnik.korisnik_id,
+                        raspored_prikazivanja_raspored_prikazivanja_id = vrijeme.raspored_prikazivanja_id,
+                        vrsta_transakcije_id = vrsta.vrsta_transakcije_id
                     };
 
                     context.Rezervacijas.Add(rezervacija);
@@ -144,6 +156,16 @@ namespace Projekt_proba1
             RefreshDGV();
             RefreshDGVrezervacije();
             PopuniCboxSjedala();
+        }
+
+        private void btnOdjava_Click(object sender, EventArgs e)
+        {
+            
+            FormLogin frmLogin = new FormLogin();
+            this.Close();
+            this.Hide();
+            frmLogin.ShowDialog();
+            this.Show();
         }
     }
 }

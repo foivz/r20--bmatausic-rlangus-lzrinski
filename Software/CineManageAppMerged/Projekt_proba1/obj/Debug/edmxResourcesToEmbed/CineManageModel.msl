@@ -70,6 +70,7 @@
           <ScalarProperty Name="sjedala_sjedalo_id" ColumnName="sjedala_sjedalo_id" />
           <ScalarProperty Name="korisnik_korisnik_id" ColumnName="korisnik_korisnik_id" />
           <ScalarProperty Name="raspored_prikazivanja_raspored_prikazivanja_id" ColumnName="raspored_prikazivanja_raspored_prikazivanja_id" />
+          <ScalarProperty Name="vrsta_transakcije_id" ColumnName="vrsta_transakcije_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -98,6 +99,14 @@
           <ScalarProperty Name="zauzeto" ColumnName="zauzeto" />
           <ScalarProperty Name="prikazuje_se_prikazuje_se_id" ColumnName="prikazuje_se_prikazuje_se_id" />
           <ScalarProperty Name="sjedala_sjedalo_id" ColumnName="sjedala_sjedalo_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vrsta_Transakcije">
+      <EntityTypeMapping TypeName="CineManageDBModel.Vrsta_Transakcije">
+        <MappingFragment StoreEntitySet="Vrsta_Transakcije">
+          <ScalarProperty Name="vrsta_transakcije_id" ColumnName="vrsta_transakcije_id" />
+          <ScalarProperty Name="naziv_transakcije" ColumnName="naziv_transakcije" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

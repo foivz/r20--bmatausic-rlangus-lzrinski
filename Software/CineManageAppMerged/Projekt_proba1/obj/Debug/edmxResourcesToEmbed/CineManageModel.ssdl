@@ -53,7 +53,7 @@
       <PropertyRef Name="raspored_prikazivanja_id" />
     </Key>
     <Property Name="raspored_prikazivanja_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="vrijeme_prikazivanja" Type="datetime" Nullable="false" />
+    <Property Name="vrijeme_prikazivanja" Type="smalldatetime" Nullable="false" />
   </EntityType>
   <EntityType Name="Rezervacija">
     <Key>
@@ -64,6 +64,7 @@
     <Property Name="sjedala_sjedalo_id" Type="int" Nullable="false" />
     <Property Name="korisnik_korisnik_id" Type="int" Nullable="false" />
     <Property Name="raspored_prikazivanja_raspored_prikazivanja_id" Type="int" Nullable="false" />
+    <Property Name="vrsta_transakcije_id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Rola">
     <Key>
@@ -90,6 +91,13 @@
     <Property Name="prikazuje_se_prikazuje_se_id" Type="int" Nullable="false" />
     <Property Name="sjedala_sjedalo_id" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="Vrsta_Transakcije">
+    <Key>
+      <PropertyRef Name="vrsta_transakcije_id" />
+    </Key>
+    <Property Name="vrsta_transakcije_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv_transakcije" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <Association Name="film$fk_film_dvorana1">
     <End Role="Dvorana" Type="Self.Dvorana" Multiplicity="1" />
     <End Role="Film" Type="Self.Film" Multiplicity="*" />
@@ -111,6 +119,18 @@
       </Principal>
       <Dependent Role="Film">
         <PropertyRef Name="kategorija_kategorija_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="film_foreign">
+    <End Role="Film" Type="Self.Film" Multiplicity="1" />
+    <End Role="Rezervacija" Type="Self.Rezervacija" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Film">
+        <PropertyRef Name="film_id" />
+      </Principal>
+      <Dependent Role="Rezervacija">
+        <PropertyRef Name="film_film_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -147,18 +167,6 @@
       </Principal>
       <Dependent Role="Prikazivanje">
         <PropertyRef Name="raspored_prikazivanja_idraspored_prikazivanja" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="rezervacija$fk_rezervacija_film1">
-    <End Role="Film" Type="Self.Film" Multiplicity="1" />
-    <End Role="Rezervacija" Type="Self.Rezervacija" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Film">
-        <PropertyRef Name="film_id" />
-      </Principal>
-      <Dependent Role="Rezervacija">
-        <PropertyRef Name="film_film_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -234,6 +242,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="vrsta_foreign">
+    <End Role="Vrsta_Transakcije" Type="Self.Vrsta_Transakcije" Multiplicity="1" />
+    <End Role="Rezervacija" Type="Self.Rezervacija" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vrsta_Transakcije">
+        <PropertyRef Name="vrsta_transakcije_id" />
+      </Principal>
+      <Dependent Role="Rezervacija">
+        <PropertyRef Name="vrsta_transakcije_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="CineManageDBModelStoreContainer">
     <EntitySet Name="Dvorana" EntityType="Self.Dvorana" Schema="cineManage" store:Type="Tables" />
     <EntitySet Name="Film" EntityType="Self.Film" Schema="cineManage" store:Type="Tables" />
@@ -245,6 +265,7 @@
     <EntitySet Name="Rola" EntityType="Self.Rola" Schema="cineManage" store:Type="Tables" />
     <EntitySet Name="Sjedalo" EntityType="Self.Sjedalo" Schema="cineManage" store:Type="Tables" />
     <EntitySet Name="Zauzetost_Sjedala" EntityType="Self.Zauzetost_Sjedala" Schema="cineManage" store:Type="Tables" />
+    <EntitySet Name="Vrsta_Transakcije" EntityType="Self.Vrsta_Transakcije" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="film$fk_film_dvorana1" Association="Self.film$fk_film_dvorana1">
       <End Role="Dvorana" EntitySet="Dvorana" />
       <End Role="Film" EntitySet="Film" />
@@ -252,6 +273,10 @@
     <AssociationSet Name="film$fk_film_kategorija1" Association="Self.film$fk_film_kategorija1">
       <End Role="Kategorija" EntitySet="Kategorija" />
       <End Role="Film" EntitySet="Film" />
+    </AssociationSet>
+    <AssociationSet Name="film_foreign" Association="Self.film_foreign">
+      <End Role="Film" EntitySet="Film" />
+      <End Role="Rezervacija" EntitySet="Rezervacija" />
     </AssociationSet>
     <AssociationSet Name="korisnik$fk_korisnik_rola" Association="Self.korisnik$fk_korisnik_rola">
       <End Role="Rola" EntitySet="Rola" />
@@ -264,10 +289,6 @@
     <AssociationSet Name="prikazuje_se$fk_prikazuje_se_raspored_prikazivanja1" Association="Self.prikazuje_se$fk_prikazuje_se_raspored_prikazivanja1">
       <End Role="Raspored_Prikazivanja" EntitySet="Raspored_Prikazivanja" />
       <End Role="Prikazivanje" EntitySet="Prikazivanje" />
-    </AssociationSet>
-    <AssociationSet Name="rezervacija$fk_rezervacija_film1" Association="Self.rezervacija$fk_rezervacija_film1">
-      <End Role="Film" EntitySet="Film" />
-      <End Role="Rezervacija" EntitySet="Rezervacija" />
     </AssociationSet>
     <AssociationSet Name="rezervacija$fk_rezervacija_korisnik1" Association="Self.rezervacija$fk_rezervacija_korisnik1">
       <End Role="Korisnik" EntitySet="Korisnik" />
@@ -292,6 +313,10 @@
     <AssociationSet Name="sjedalo_je_zauzeto$fk_sjedalo_je_zauzeto_sjedala1" Association="Self.sjedalo_je_zauzeto$fk_sjedalo_je_zauzeto_sjedala1">
       <End Role="Sjedalo" EntitySet="Sjedalo" />
       <End Role="Zauzetost_Sjedala" EntitySet="Zauzetost_Sjedala" />
+    </AssociationSet>
+    <AssociationSet Name="vrsta_foreign" Association="Self.vrsta_foreign">
+      <End Role="Vrsta_Transakcije" EntitySet="Vrsta_Transakcije" />
+      <End Role="Rezervacija" EntitySet="Rezervacija" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

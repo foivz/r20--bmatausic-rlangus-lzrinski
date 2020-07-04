@@ -24,8 +24,8 @@
     <Property Name="dvorana_dvorana_id" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Dvorana" Relationship="Self.film_fk_film_dvorana1" FromRole="Film" ToRole="Dvorana" />
     <NavigationProperty Name="Kategorija" Relationship="Self.film_fk_film_kategorija1" FromRole="Film" ToRole="Kategorija" />
+    <NavigationProperty Name="Rezervacijas" Relationship="Self.film_foreign" FromRole="Film" ToRole="Rezervacija" />
     <NavigationProperty Name="Prikazivanjes" Relationship="Self.prikazuje_se_fk_prikazuje_se_film1" FromRole="Film" ToRole="Prikazivanje" />
-    <NavigationProperty Name="Rezervacijas" Relationship="Self.rezervacija_fk_rezervacija_film1" FromRole="Film" ToRole="Rezervacija" />
   </EntityType>
   <EntityType Name="Kategorija">
     <Key>
@@ -65,7 +65,7 @@
       <PropertyRef Name="raspored_prikazivanja_id" />
     </Key>
     <Property Name="raspored_prikazivanja_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="vrijeme_prikazivanja" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="vrijeme_prikazivanja" Type="DateTime" Nullable="false" Precision="0" />
     <NavigationProperty Name="Prikazivanjes" Relationship="Self.prikazuje_se_fk_prikazuje_se_raspored_prikazivanja1" FromRole="Raspored_Prikazivanja" ToRole="Prikazivanje" />
     <NavigationProperty Name="Rezervacijas" Relationship="Self.rezervacija_fk_rezervacija_raspored_prikazivanja1" FromRole="Raspored_Prikazivanja" ToRole="Rezervacija" />
   </EntityType>
@@ -78,10 +78,12 @@
     <Property Name="sjedala_sjedalo_id" Type="Int32" Nullable="false" />
     <Property Name="korisnik_korisnik_id" Type="Int32" Nullable="false" />
     <Property Name="raspored_prikazivanja_raspored_prikazivanja_id" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Film" Relationship="Self.rezervacija_fk_rezervacija_film1" FromRole="Rezervacija" ToRole="Film" />
+    <Property Name="vrsta_transakcije_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Film" Relationship="Self.film_foreign" FromRole="Rezervacija" ToRole="Film" />
     <NavigationProperty Name="Korisnik" Relationship="Self.rezervacija_fk_rezervacija_korisnik1" FromRole="Rezervacija" ToRole="Korisnik" />
     <NavigationProperty Name="Raspored_Prikazivanja" Relationship="Self.rezervacija_fk_rezervacija_raspored_prikazivanja1" FromRole="Rezervacija" ToRole="Raspored_Prikazivanja" />
     <NavigationProperty Name="Sjedalo" Relationship="Self.rezervacija_fk_rezervacija_sjedala1" FromRole="Rezervacija" ToRole="Sjedalo" />
+    <NavigationProperty Name="Vrsta_Transakcije" Relationship="Self.vrsta_foreign" FromRole="Rezervacija" ToRole="Vrsta_Transakcije" />
   </EntityType>
   <EntityType Name="Rola">
     <Key>
@@ -113,6 +115,14 @@
     <Property Name="sjedala_sjedalo_id" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Prikazivanje" Relationship="Self.sjedalo_je_zauzeto_fk_sjedalo_je_zauzeto_prikazuje_se1" FromRole="Zauzetost_Sjedala" ToRole="Prikazivanje" />
     <NavigationProperty Name="Sjedalo" Relationship="Self.sjedalo_je_zauzeto_fk_sjedalo_je_zauzeto_sjedala1" FromRole="Zauzetost_Sjedala" ToRole="Sjedalo" />
+  </EntityType>
+  <EntityType Name="Vrsta_Transakcije">
+    <Key>
+      <PropertyRef Name="vrsta_transakcije_id" />
+    </Key>
+    <Property Name="vrsta_transakcije_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="naziv_transakcije" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Rezervacijas" Relationship="Self.vrsta_foreign" FromRole="Vrsta_Transakcije" ToRole="Rezervacija" />
   </EntityType>
   <Association Name="film_fk_film_dvorana1">
     <End Role="Dvorana" Type="Self.Dvorana" Multiplicity="1" />
@@ -150,6 +160,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="film_foreign">
+    <End Role="Film" Type="Self.Film" Multiplicity="1" />
+    <End Role="Rezervacija" Type="Self.Rezervacija" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Film">
+        <PropertyRef Name="film_id" />
+      </Principal>
+      <Dependent Role="Rezervacija">
+        <PropertyRef Name="film_film_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="prikazuje_se_fk_prikazuje_se_film1">
     <End Role="Film" Type="Self.Film" Multiplicity="1" />
     <End Role="Prikazivanje" Type="Self.Prikazivanje" Multiplicity="*" />
@@ -158,18 +180,6 @@
         <PropertyRef Name="film_id" />
       </Principal>
       <Dependent Role="Prikazivanje">
-        <PropertyRef Name="film_film_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="rezervacija_fk_rezervacija_film1">
-    <End Role="Film" Type="Self.Film" Multiplicity="1" />
-    <End Role="Rezervacija" Type="Self.Rezervacija" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Film">
-        <PropertyRef Name="film_id" />
-      </Principal>
-      <Dependent Role="Rezervacija">
         <PropertyRef Name="film_film_id" />
       </Dependent>
     </ReferentialConstraint>
@@ -246,6 +256,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="vrsta_foreign">
+    <End Role="Vrsta_Transakcije" Type="Self.Vrsta_Transakcije" Multiplicity="1" />
+    <End Role="Rezervacija" Type="Self.Rezervacija" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vrsta_Transakcije">
+        <PropertyRef Name="vrsta_transakcije_id" />
+      </Principal>
+      <Dependent Role="Rezervacija">
+        <PropertyRef Name="vrsta_transakcije_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="sjedalo_je_zauzeto_fk_sjedalo_je_zauzeto_sjedala1">
     <End Role="Sjedalo" Type="Self.Sjedalo" Multiplicity="1" />
     <End Role="Zauzetost_Sjedala" Type="Self.Zauzetost_Sjedala" Multiplicity="*" />
@@ -269,6 +291,7 @@
     <EntitySet Name="Rolas" EntityType="Self.Rola" />
     <EntitySet Name="Sjedaloes" EntityType="Self.Sjedalo" />
     <EntitySet Name="Zauzetost_Sjedala" EntityType="Self.Zauzetost_Sjedala" />
+    <EntitySet Name="Vrsta_Transakcije" EntityType="Self.Vrsta_Transakcije" />
     <AssociationSet Name="film_fk_film_dvorana1" Association="Self.film_fk_film_dvorana1">
       <End Role="Dvorana" EntitySet="Dvoranas" />
       <End Role="Film" EntitySet="Films" />
@@ -281,13 +304,13 @@
       <End Role="Kategorija" EntitySet="Kategorijas" />
       <End Role="Film" EntitySet="Films" />
     </AssociationSet>
+    <AssociationSet Name="film_foreign" Association="Self.film_foreign">
+      <End Role="Film" EntitySet="Films" />
+      <End Role="Rezervacija" EntitySet="Rezervacijas" />
+    </AssociationSet>
     <AssociationSet Name="prikazuje_se_fk_prikazuje_se_film1" Association="Self.prikazuje_se_fk_prikazuje_se_film1">
       <End Role="Film" EntitySet="Films" />
       <End Role="Prikazivanje" EntitySet="Prikazivanjes" />
-    </AssociationSet>
-    <AssociationSet Name="rezervacija_fk_rezervacija_film1" Association="Self.rezervacija_fk_rezervacija_film1">
-      <End Role="Film" EntitySet="Films" />
-      <End Role="Rezervacija" EntitySet="Rezervacijas" />
     </AssociationSet>
     <AssociationSet Name="korisnik_fk_korisnik_rola" Association="Self.korisnik_fk_korisnik_rola">
       <End Role="Rola" EntitySet="Rolas" />
@@ -311,6 +334,10 @@
     </AssociationSet>
     <AssociationSet Name="rezervacija_fk_rezervacija_sjedala1" Association="Self.rezervacija_fk_rezervacija_sjedala1">
       <End Role="Sjedalo" EntitySet="Sjedaloes" />
+      <End Role="Rezervacija" EntitySet="Rezervacijas" />
+    </AssociationSet>
+    <AssociationSet Name="vrsta_foreign" Association="Self.vrsta_foreign">
+      <End Role="Vrsta_Transakcije" EntitySet="Vrsta_Transakcije" />
       <End Role="Rezervacija" EntitySet="Rezervacijas" />
     </AssociationSet>
     <AssociationSet Name="sjedalo_je_zauzeto_fk_sjedalo_je_zauzeto_sjedala1" Association="Self.sjedalo_je_zauzeto_fk_sjedalo_je_zauzeto_sjedala1">

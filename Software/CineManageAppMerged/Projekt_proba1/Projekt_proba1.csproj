@@ -164,6 +164,10 @@
     <Compile Include="Sjedalo.cs">
       <DependentUpon>CineManageModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Vrsta_Transakcije.code.cs" />
+    <Compile Include="Vrsta_Transakcije.cs">
+      <DependentUpon>CineManageModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Zauzetost_Sjedala.cs">
       <DependentUpon>CineManageModel.tt</DependentUpon>
     </Compile>

@@ -19,10 +19,12 @@ namespace Projekt_proba1
         public int sjedala_sjedalo_id { get; set; }
         public int korisnik_korisnik_id { get; set; }
         public int raspored_prikazivanja_raspored_prikazivanja_id { get; set; }
+        public int vrsta_transakcije_id { get; set; }
     
         public virtual Film Film { get; set; }
         public virtual Korisnik Korisnik { get; set; }
         public virtual Raspored_Prikazivanja Raspored_Prikazivanja { get; set; }
         public virtual Sjedalo Sjedalo { get; set; }
+        public virtual Vrsta_Transakcije Vrsta_Transakcije { get; set; }
     }
 }

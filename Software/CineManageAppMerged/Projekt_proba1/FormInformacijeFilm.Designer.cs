@@ -62,6 +62,7 @@
             this.btnOdjava.TabIndex = 16;
             this.btnOdjava.Text = "Odjava";
             this.btnOdjava.UseVisualStyleBackColor = false;
+            this.btnOdjava.Click += new System.EventHandler(this.btnOdjava_Click);
             // 
             // pboxKinoSlika
             // 
@@ -204,7 +205,7 @@
             // txtSadrzaj
             // 
             this.txtSadrzaj.Location = new System.Drawing.Point(260, 309);
-            this.txtSadrzaj.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSadrzaj.Margin = new System.Windows.Forms.Padding(2);
             this.txtSadrzaj.Multiline = true;
             this.txtSadrzaj.Name = "txtSadrzaj";
             this.txtSadrzaj.ReadOnly = true;
@@ -215,7 +216,7 @@
             // 
             this.cboxVrijeme.FormattingEnabled = true;
             this.cboxVrijeme.Location = new System.Drawing.Point(260, 227);
-            this.cboxVrijeme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboxVrijeme.Margin = new System.Windows.Forms.Padding(2);
             this.cboxVrijeme.Name = "cboxVrijeme";
             this.cboxVrijeme.Size = new System.Drawing.Size(140, 21);
             this.cboxVrijeme.TabIndex = 41;
@@ -224,7 +225,7 @@
             // 
             this.btnPrijava.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnPrijava.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrijava.Location = new System.Drawing.Point(478, 9);
+            this.btnPrijava.Location = new System.Drawing.Point(315, 9);
             this.btnPrijava.Name = "btnPrijava";
             this.btnPrijava.Size = new System.Drawing.Size(74, 23);
             this.btnPrijava.TabIndex = 42;

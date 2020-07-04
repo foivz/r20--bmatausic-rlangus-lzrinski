@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared folder za projekt\PI CINEMANAGE ALL\Projekt_login_registracija_kod\Projekt_proba1\CineManageModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt_login_reg(radno verzija)\Projekt_proba1\CineManageModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
