@@ -90,3 +90,26 @@ c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt
 c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\bin\Debug\EntityFramework.xml
 c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\bin\Debug\EntityFramework.SqlServer.xml
 c:\Users\Develooper\source\repos\PI CINEMANAGE\PI CINEMANAGE ALL\Projekt\Projekt_proba1\obj\Debug\Projekt_proba1.csproj.CopyComplete
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\bin\Debug\Projekt_proba1.exe.config
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\bin\Debug\Projekt_proba1.exe
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\bin\Debug\Projekt_proba1.pdb
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\bin\Debug\EntityFramework.dll
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\bin\Debug\EntityFramework.xml
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\obj\Debug\Projekt_proba1.csprojAssemblyReference.cache
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\obj\Debug\Projekt_proba1.FormAzuriranjeFilma.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\obj\Debug\Projekt_proba1.FormDodavanjeFilma.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\obj\Debug\Projekt_proba1.FormInformacijeFilm.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\obj\Debug\Projekt_proba1.FormIzvjesceGraf.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\obj\Debug\Projekt_proba1.FormLogin.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\obj\Debug\Projekt_proba1.FormObracun.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\obj\Debug\Projekt_proba1.FormPregledFilmova.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\obj\Debug\Projekt_proba1.FormRezervacijaUlaznica.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\obj\Debug\Projekt_proba1.FormStvaranjeKorisnika.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\obj\Debug\Projekt_proba1.Properties.Resources.resources
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\obj\Debug\Projekt_proba1.csproj.GenerateResource.cache
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\obj\Debug\Projekt_proba1.csproj.CoreCompileInputs.cache
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\obj\Debug\Projekt_proba1.csproj.CopyComplete
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\obj\Debug\Projekt_proba1.exe
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Projekt(latest version)\Projekt_proba1\obj\Debug\Projekt_proba1.pdb

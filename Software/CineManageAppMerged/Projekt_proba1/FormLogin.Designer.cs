@@ -39,6 +39,7 @@
             this.btnPrijava = new System.Windows.Forms.Button();
             this.dgvLista = new System.Windows.Forms.DataGridView();
             this.btnNeregistrirani = new System.Windows.Forms.Button();
+            this.btnSofty = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,11 +149,22 @@
             this.btnNeregistrirani.UseVisualStyleBackColor = true;
             this.btnNeregistrirani.Click += new System.EventHandler(this.btnNeregistrirani_Click);
             // 
+            // btnSofty
+            // 
+            this.btnSofty.Location = new System.Drawing.Point(32, 176);
+            this.btnSofty.Name = "btnSofty";
+            this.btnSofty.Size = new System.Drawing.Size(101, 61);
+            this.btnSofty.TabIndex = 12;
+            this.btnSofty.Text = "Softypaw";
+            this.btnSofty.UseVisualStyleBackColor = true;
+            this.btnSofty.Click += new System.EventHandler(this.btnSofty_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 392);
+            this.Controls.Add(this.btnSofty);
             this.Controls.Add(this.btnNeregistrirani);
             this.Controls.Add(this.dgvLista);
             this.Controls.Add(this.btnPrijava);
@@ -186,6 +198,7 @@
         private System.Windows.Forms.Button btnPrijava;
         private System.Windows.Forms.DataGridView dgvLista;
         private System.Windows.Forms.Button btnNeregistrirani;
+        private System.Windows.Forms.Button btnSofty;
     }
 }
 

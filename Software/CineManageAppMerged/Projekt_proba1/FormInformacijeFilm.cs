@@ -65,7 +65,7 @@ namespace Projekt_proba1
                 Raspored_Prikazivanja vrijeme = cboxVrijeme.SelectedItem as Raspored_Prikazivanja;
                 if(korisnik == null)
                 {
-                    throw new NeregistriraniKorisnikException("Kako bi mogli koristiti ovu funkcionalnost, morate se ulogirati!");
+                    throw new NeregistriraniKorisnikException("Kako biste mogli koristiti ovu funkcionalnost, morate se ulogirati!");
                 }
                 FormRezervacijaUlaznica form = new FormRezervacijaUlaznica(korisnik, film, vrijeme);
                 form.ShowDialog();

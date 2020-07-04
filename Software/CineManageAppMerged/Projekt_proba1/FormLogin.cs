@@ -96,5 +96,11 @@ namespace Projekt_proba1
             frm.ShowDialog();
             this.Show();
         }
+
+        private void btnSofty_Click(object sender, EventArgs e)
+        {
+            txtKorisnickoIme.Text = "softypaw";
+            txtLozinka.Text = "lozinka1";
+        }
     }
 }

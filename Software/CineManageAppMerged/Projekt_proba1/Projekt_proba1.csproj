@@ -74,6 +74,7 @@
     <Compile Include="Dvorana.cs">
       <DependentUpon>CineManageModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Film.code.cs" />
     <Compile Include="Film.cs">
       <DependentUpon>CineManageModel.tt</DependentUpon>
     </Compile>
@@ -132,7 +133,6 @@
     <Compile Include="FormStvaranjeKorisnika.Designer.cs">
       <DependentUpon>FormStvaranjeKorisnika.cs</DependentUpon>
     </Compile>
-    <Compile Include="FunkcijeLoginRegistracija.cs" />
     <Compile Include="Iznimke\DodavanjeKorisnikaException.cs" />
     <Compile Include="Iznimke\LoginException.cs" />
     <Compile Include="Iznimke\NeregistriraniKorisnikException.cs" />
@@ -140,6 +140,7 @@
     <Compile Include="Kategorija.cs">
       <DependentUpon>CineManageModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Korisnik.code.cs" />
     <Compile Include="Korisnik.cs">
       <DependentUpon>CineManageModel.tt</DependentUpon>
     </Compile>
