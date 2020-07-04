@@ -290,6 +290,7 @@
             this.btnOdjava.TabIndex = 102;
             this.btnOdjava.Text = "Odjava";
             this.btnOdjava.UseVisualStyleBackColor = false;
+            this.btnOdjava.Click += new System.EventHandler(this.btnOdjava_Click);
             // 
             // pboxKinoSlika
             // 

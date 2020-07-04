@@ -188,12 +188,52 @@ namespace Projekt_proba1
 
         private void btnOdjava_Click(object sender, EventArgs e)
         {
+            FormLogin frmLogin = new FormLogin();
             this.Close();
+            this.Hide();
+            frmLogin.ShowDialog();
+            this.Show(); ;
         }
 
         private void btnPrijava_Click(object sender, EventArgs e)
         {
             this.Close();
+            FormLogin frmLogin = new FormLogin();
+            this.Hide();
+            frmLogin.ShowDialog();
+            this.Show();
+        }
+
+        private void btnDodajNoviFilm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormDodavanjeFilma frmDodavanjeFilma = new FormDodavanjeFilma();
+            this.Hide();
+            frmDodavanjeFilma.ShowDialog();
+            this.Show();
+        }
+
+        private void btnObrisi_Click(object sender, EventArgs e)
+        {
+            /* select film id delete*/
+        }
+
+        private void btnAzurirajFilm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormAzuriranjeFilma frmAzuriranjeFilma = new FormAzuriranjeFilma();
+            this.Hide();
+            frmAzuriranjeFilma.ShowDialog();
+            this.Show();
+        }
+
+        private void btnPrikazPosovanja_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormObracun frmObracun = new FormObracun();
+            this.Hide();
+            frmObracun.ShowDialog();
+            this.Show();
         }
     }
 }

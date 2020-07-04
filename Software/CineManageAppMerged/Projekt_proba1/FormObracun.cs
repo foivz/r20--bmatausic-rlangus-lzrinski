@@ -25,5 +25,14 @@ namespace Projekt_proba1
             frmLogin.ShowDialog();
             this.Show();
         }
+
+        private void btnPrikaziGraf_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormIzvjesceGraf frmIzvjesceGraf = new FormIzvjesceGraf();
+            this.Hide();
+            frmIzvjesceGraf.ShowDialog();
+            this.Show();
+        }
     }
 }

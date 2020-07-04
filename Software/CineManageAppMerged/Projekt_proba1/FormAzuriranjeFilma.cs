@@ -16,5 +16,14 @@ namespace Projekt_proba1
         {
             InitializeComponent();
         }
+
+        private void btnOdjava_Click(object sender, EventArgs e)
+        {
+            FormLogin frmLogin = new FormLogin();
+            this.Close();
+            this.Hide();
+            frmLogin.ShowDialog();
+            this.Show();
+        }
     }
 }

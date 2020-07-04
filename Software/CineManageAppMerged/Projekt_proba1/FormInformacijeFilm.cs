@@ -84,5 +84,14 @@ namespace Projekt_proba1
             frmLogin.ShowDialog();
             this.Show();
         }
+
+        private void btnPrijava_Click(object sender, EventArgs e)
+        {
+            FormLogin frmLogin = new FormLogin();
+            this.Close();
+            this.Hide();
+            frmLogin.ShowDialog();
+            this.Show();
+        }
     }
 }

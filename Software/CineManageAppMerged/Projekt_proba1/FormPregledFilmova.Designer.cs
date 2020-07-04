@@ -82,6 +82,7 @@
             this.btnDodajNoviFilm.TabIndex = 5;
             this.btnDodajNoviFilm.Text = "Dodaj";
             this.btnDodajNoviFilm.UseVisualStyleBackColor = true;
+            this.btnDodajNoviFilm.Click += new System.EventHandler(this.btnDodajNoviFilm_Click);
             // 
             // btnAzurirajFilm
             // 
@@ -91,6 +92,7 @@
             this.btnAzurirajFilm.TabIndex = 6;
             this.btnAzurirajFilm.Text = "Ažuriraj";
             this.btnAzurirajFilm.UseVisualStyleBackColor = true;
+            this.btnAzurirajFilm.Click += new System.EventHandler(this.btnAzurirajFilm_Click);
             // 
             // btnObrisi
             // 
@@ -100,6 +102,7 @@
             this.btnObrisi.TabIndex = 8;
             this.btnObrisi.Text = "Obriši";
             this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
             // btnPrikazPosovanja
             // 
@@ -110,6 +113,7 @@
             this.btnPrikazPosovanja.Text = "Prikaz poslovanja";
             this.btnPrikazPosovanja.UseVisualStyleBackColor = true;
             this.btnPrikazPosovanja.Visible = false;
+            this.btnPrikazPosovanja.Click += new System.EventHandler(this.btnPrikazPosovanja_Click);
             // 
             // dtPickerDatum
             // 

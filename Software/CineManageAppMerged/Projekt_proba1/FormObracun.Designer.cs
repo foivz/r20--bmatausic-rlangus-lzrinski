@@ -295,6 +295,7 @@
             this.btnPrikaziGraf.TabIndex = 67;
             this.btnPrikaziGraf.Text = "Prikaži graf";
             this.btnPrikaziGraf.UseVisualStyleBackColor = true;
+            this.btnPrikaziGraf.Click += new System.EventHandler(this.btnPrikaziGraf_Click);
             // 
             // FormObracun
             // 

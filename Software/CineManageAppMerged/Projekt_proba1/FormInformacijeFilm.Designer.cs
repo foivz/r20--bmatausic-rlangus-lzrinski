@@ -225,12 +225,13 @@
             // 
             this.btnPrijava.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnPrijava.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrijava.Location = new System.Drawing.Point(315, 9);
+            this.btnPrijava.Location = new System.Drawing.Point(478, 10);
             this.btnPrijava.Name = "btnPrijava";
             this.btnPrijava.Size = new System.Drawing.Size(74, 23);
             this.btnPrijava.TabIndex = 42;
             this.btnPrijava.Text = "Prijavi se";
             this.btnPrijava.UseVisualStyleBackColor = false;
+            this.btnPrijava.Click += new System.EventHandler(this.btnPrijava_Click);
             // 
             // FormInformacijeFilm
             // 
