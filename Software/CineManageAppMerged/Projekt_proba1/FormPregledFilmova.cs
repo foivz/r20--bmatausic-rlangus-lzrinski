@@ -215,7 +215,23 @@ namespace Projekt_proba1
 
         private void btnObrisi_Click(object sender, EventArgs e)
         {
-            /* select film id delete*/
+            
+            /* isprobat tek nakon dodavanja novog filma od admina
+             * 
+                FilmView odabrani = dgvFilmovi.CurrentRow.DataBoundItem as FilmView;
+                Film odabraniFilm;
+                using (var context = new CineManageEntities())
+                {
+                    var query = from f in context.Films
+                                where f.film_id == odabrani.film_id
+                                select f;
+                    odabraniFilm = query.Single();
+                    context.Films.Attach(odabraniFilm);
+                    context.Films.Remove(odabraniFilm);
+                    context.SaveChanges();
+                }
+            */
+
         }
 
         private void btnAzurirajFilm_Click(object sender, EventArgs e)
