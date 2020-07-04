@@ -12,6 +12,8 @@ namespace Projekt_proba1
 {
     public partial class FormRezervacijaUlaznica : Form
     {
+
+        //KOmentar
         private Korisnik korisnik;
         private Film film;
         private Raspored_Prikazivanja vrijeme;
