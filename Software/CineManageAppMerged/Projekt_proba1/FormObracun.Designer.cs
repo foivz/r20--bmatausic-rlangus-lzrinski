@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormObracun));
             this.gboxInfoTransakcije = new System.Windows.Forms.GroupBox();
             this.rbtnFilterZaradaGodina = new System.Windows.Forms.RadioButton();
             this.rbtnFilterZaradaMjesec = new System.Windows.Forms.RadioButton();
@@ -155,6 +156,7 @@
             // 
             // pboxKinoSlika
             // 
+            this.pboxKinoSlika.Image = ((System.Drawing.Image)(resources.GetObject("pboxKinoSlika.Image")));
             this.pboxKinoSlika.Location = new System.Drawing.Point(12, 53);
             this.pboxKinoSlika.Name = "pboxKinoSlika";
             this.pboxKinoSlika.Size = new System.Drawing.Size(89, 88);

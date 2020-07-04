@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIzvjesceGraf));
             this.btnOdjava = new System.Windows.Forms.Button();
             this.pboxKinoSlika = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@
             // 
             // pboxKinoSlika
             // 
+            this.pboxKinoSlika.Image = ((System.Drawing.Image)(resources.GetObject("pboxKinoSlika.Image")));
             this.pboxKinoSlika.Location = new System.Drawing.Point(12, 52);
             this.pboxKinoSlika.Name = "pboxKinoSlika";
             this.pboxKinoSlika.Size = new System.Drawing.Size(89, 88);

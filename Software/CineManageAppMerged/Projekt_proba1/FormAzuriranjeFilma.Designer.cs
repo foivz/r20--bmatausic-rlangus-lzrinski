@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAzuriranjeFilma));
             this.tboxAzurirajSadrzajFilma = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tboxAzurirajRedateljFilma = new System.Windows.Forms.TextBox();
@@ -73,7 +74,7 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(142, 371);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(103, 16);
+            this.label9.Size = new System.Drawing.Size(102, 16);
             this.label9.TabIndex = 126;
             this.label9.Text = "Sadržaj filma:";
             // 
@@ -255,7 +256,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(142, 255);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 16);
+            this.label4.Size = new System.Drawing.Size(80, 16);
             this.label4.TabIndex = 107;
             this.label4.Text = "Žanr filma:";
             // 
@@ -292,6 +293,7 @@
             // 
             // pboxKinoSlika
             // 
+            this.pboxKinoSlika.Image = ((System.Drawing.Image)(resources.GetObject("pboxKinoSlika.Image")));
             this.pboxKinoSlika.Location = new System.Drawing.Point(13, 57);
             this.pboxKinoSlika.Name = "pboxKinoSlika";
             this.pboxKinoSlika.Size = new System.Drawing.Size(89, 88);
