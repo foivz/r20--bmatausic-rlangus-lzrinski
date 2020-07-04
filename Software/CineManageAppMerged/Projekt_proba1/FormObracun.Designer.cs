@@ -52,6 +52,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dgvBrojProdanihUlaznica = new System.Windows.Forms.DataGridView();
             this.btnPrikaziGraf = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblSumaUlaznice = new System.Windows.Forms.Label();
+            this.lblUkUlaznice = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.gboxInfoTransakcije.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaradaOdUlaznica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxKinoSlika)).BeginInit();
@@ -62,6 +66,8 @@
             // 
             // gboxInfoTransakcije
             // 
+            this.gboxInfoTransakcije.Controls.Add(this.lblSumaUlaznice);
+            this.gboxInfoTransakcije.Controls.Add(this.label6);
             this.gboxInfoTransakcije.Controls.Add(this.rbtnFilterZaradaGodina);
             this.gboxInfoTransakcije.Controls.Add(this.rbtnFilterZaradaMjesec);
             this.gboxInfoTransakcije.Controls.Add(this.rbtnFilterZaradaDan);
@@ -108,6 +114,7 @@
             this.rbtnFilterZaradaDan.TabStop = true;
             this.rbtnFilterZaradaDan.Text = "Dan";
             this.rbtnFilterZaradaDan.UseVisualStyleBackColor = true;
+            this.rbtnFilterZaradaDan.CheckedChanged += new System.EventHandler(this.rbtnFilterZaradaDan_CheckedChanged);
             // 
             // cboxFilterZaradaFilm
             // 
@@ -116,6 +123,7 @@
             this.cboxFilterZaradaFilm.Name = "cboxFilterZaradaFilm";
             this.cboxFilterZaradaFilm.Size = new System.Drawing.Size(121, 21);
             this.cboxFilterZaradaFilm.TabIndex = 3;
+            this.cboxFilterZaradaFilm.SelectionChangeCommitted += new System.EventHandler(this.cboxFilterZaradaFilm_SelectionChangeCommitted);
             // 
             // label3
             // 
@@ -206,7 +214,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblUkUlaznice);
             this.groupBox1.Controls.Add(this.rbtnFilterUlazniceGodina);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.rbtnFilterUlazniceMjesec);
             this.groupBox1.Controls.Add(this.rbtnFilterUlazniceDan);
             this.groupBox1.Controls.Add(this.cboxFilterUlazniceFilm);
@@ -260,15 +270,16 @@
             this.cboxFilterUlazniceFilm.Name = "cboxFilterUlazniceFilm";
             this.cboxFilterUlazniceFilm.Size = new System.Drawing.Size(121, 21);
             this.cboxFilterUlazniceFilm.TabIndex = 3;
+            this.cboxFilterUlazniceFilm.SelectionChangeCommitted += new System.EventHandler(this.cboxFilterUlazniceFilm_SelectionChangeCommitted);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(362, 188);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.Size = new System.Drawing.Size(61, 13);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Zarada po:";
+            this.label4.Text = "Prodaja po:";
             // 
             // label5
             // 
@@ -297,6 +308,44 @@
             this.btnPrikaziGraf.UseVisualStyleBackColor = true;
             this.btnPrikaziGraf.Click += new System.EventHandler(this.btnPrikaziGraf_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 213);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(166, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Ukupna zarada od ulaznica:";
+            // 
+            // lblSumaUlaznice
+            // 
+            this.lblSumaUlaznice.AutoSize = true;
+            this.lblSumaUlaznice.Location = new System.Drawing.Point(169, 213);
+            this.lblSumaUlaznice.Name = "lblSumaUlaznice";
+            this.lblSumaUlaznice.Size = new System.Drawing.Size(19, 13);
+            this.lblSumaUlaznice.TabIndex = 8;
+            this.lblSumaUlaznice.Text = "uk";
+            // 
+            // lblUkUlaznice
+            // 
+            this.lblUkUlaznice.AutoSize = true;
+            this.lblUkUlaznice.Location = new System.Drawing.Point(165, 213);
+            this.lblUkUlaznice.Name = "lblUkUlaznice";
+            this.lblUkUlaznice.Size = new System.Drawing.Size(19, 13);
+            this.lblUkUlaznice.TabIndex = 10;
+            this.lblUkUlaznice.Text = "uk";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(5, 213);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(159, 13);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Ukupno prodanih ulaznica:";
+            // 
             // FormObracun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -313,6 +362,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Name = "FormObracun";
             this.Text = "Obračun";
+            this.Load += new System.EventHandler(this.FormObracun_Load);
             this.gboxInfoTransakcije.ResumeLayout(false);
             this.gboxInfoTransakcije.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaradaOdUlaznica)).EndInit();
@@ -350,5 +400,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvBrojProdanihUlaznica;
         private System.Windows.Forms.Button btnPrikaziGraf;
+        private System.Windows.Forms.Label lblSumaUlaznice;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblUkUlaznice;
+        private System.Windows.Forms.Label label8;
     }
 }
