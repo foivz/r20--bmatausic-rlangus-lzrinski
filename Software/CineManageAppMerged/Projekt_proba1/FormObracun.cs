@@ -234,7 +234,7 @@ namespace Projekt_proba1
                 dgvZaradaOdUlaznica.DataSource = query.ToList();*/
 
 
-        }
+        
         }
     }
 }
