@@ -73,7 +73,7 @@
             // pboxFilmCover
             // 
             this.pboxFilmCover.Location = new System.Drawing.Point(17, 23);
-            this.pboxFilmCover.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pboxFilmCover.Margin = new System.Windows.Forms.Padding(4);
             this.pboxFilmCover.Name = "pboxFilmCover";
             this.pboxFilmCover.Size = new System.Drawing.Size(196, 226);
             this.pboxFilmCover.TabIndex = 56;
@@ -172,7 +172,7 @@
             this.btnOdjava.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnOdjava.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOdjava.Location = new System.Drawing.Point(713, 7);
-            this.btnOdjava.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOdjava.Margin = new System.Windows.Forms.Padding(4);
             this.btnOdjava.Name = "btnOdjava";
             this.btnOdjava.Size = new System.Drawing.Size(99, 28);
             this.btnOdjava.TabIndex = 42;
@@ -184,7 +184,7 @@
             // 
             this.pboxKinoSlika.Image = ((System.Drawing.Image)(resources.GetObject("pboxKinoSlika.Image")));
             this.pboxKinoSlika.Location = new System.Drawing.Point(19, 65);
-            this.pboxKinoSlika.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pboxKinoSlika.Margin = new System.Windows.Forms.Padding(4);
             this.pboxKinoSlika.Name = "pboxKinoSlika";
             this.pboxKinoSlika.Size = new System.Drawing.Size(119, 108);
             this.pboxKinoSlika.TabIndex = 41;
@@ -204,7 +204,7 @@
             // btnPotvrdaRezervacije
             // 
             this.btnPotvrdaRezervacije.Location = new System.Drawing.Point(671, 770);
-            this.btnPotvrdaRezervacije.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPotvrdaRezervacije.Margin = new System.Windows.Forms.Padding(4);
             this.btnPotvrdaRezervacije.Name = "btnPotvrdaRezervacije";
             this.btnPotvrdaRezervacije.Size = new System.Drawing.Size(160, 28);
             this.btnPotvrdaRezervacije.TabIndex = 43;
@@ -229,7 +229,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(845, 46);
             this.pictureBox2.TabIndex = 45;
@@ -249,9 +249,9 @@
             this.gboxInfoTransakcije.Controls.Add(this.lblInfoFilm);
             this.gboxInfoTransakcije.Controls.Add(this.lblInfoVrijemePrikaza);
             this.gboxInfoTransakcije.Location = new System.Drawing.Point(19, 231);
-            this.gboxInfoTransakcije.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gboxInfoTransakcije.Margin = new System.Windows.Forms.Padding(4);
             this.gboxInfoTransakcije.Name = "gboxInfoTransakcije";
-            this.gboxInfoTransakcije.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gboxInfoTransakcije.Padding = new System.Windows.Forms.Padding(4);
             this.gboxInfoTransakcije.Size = new System.Drawing.Size(272, 530);
             this.gboxInfoTransakcije.TabIndex = 57;
             this.gboxInfoTransakcije.TabStop = false;
@@ -292,9 +292,9 @@
             this.gboxOdabirSjedala.Controls.Add(this.label7);
             this.gboxOdabirSjedala.Controls.Add(this.pboxOdabirSjedala);
             this.gboxOdabirSjedala.Location = new System.Drawing.Point(299, 231);
-            this.gboxOdabirSjedala.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gboxOdabirSjedala.Margin = new System.Windows.Forms.Padding(4);
             this.gboxOdabirSjedala.Name = "gboxOdabirSjedala";
-            this.gboxOdabirSjedala.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gboxOdabirSjedala.Padding = new System.Windows.Forms.Padding(4);
             this.gboxOdabirSjedala.Size = new System.Drawing.Size(547, 530);
             this.gboxOdabirSjedala.TabIndex = 58;
             this.gboxOdabirSjedala.TabStop = false;
@@ -314,7 +314,7 @@
             // btnObrisi
             // 
             this.btnObrisi.Location = new System.Drawing.Point(413, 302);
-            this.btnObrisi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnObrisi.Margin = new System.Windows.Forms.Padding(4);
             this.btnObrisi.Name = "btnObrisi";
             this.btnObrisi.Size = new System.Drawing.Size(101, 28);
             this.btnObrisi.TabIndex = 66;
@@ -324,6 +324,8 @@
             // 
             // dgvOdabranaSjedala
             // 
+            this.dgvOdabranaSjedala.AllowUserToAddRows = false;
+            this.dgvOdabranaSjedala.AllowUserToDeleteRows = false;
             this.dgvOdabranaSjedala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOdabranaSjedala.Location = new System.Drawing.Point(11, 366);
             this.dgvOdabranaSjedala.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -336,7 +338,7 @@
             // btnOdaberi
             // 
             this.btnOdaberi.Location = new System.Drawing.Point(285, 302);
-            this.btnOdaberi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOdaberi.Margin = new System.Windows.Forms.Padding(4);
             this.btnOdaberi.Name = "btnOdaberi";
             this.btnOdaberi.Size = new System.Drawing.Size(101, 28);
             this.btnOdaberi.TabIndex = 59;
@@ -348,7 +350,7 @@
             // 
             this.rbtnRezervacija.AutoSize = true;
             this.rbtnRezervacija.Location = new System.Drawing.Point(421, 257);
-            this.rbtnRezervacija.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnRezervacija.Margin = new System.Windows.Forms.Padding(4);
             this.rbtnRezervacija.Name = "rbtnRezervacija";
             this.rbtnRezervacija.Size = new System.Drawing.Size(103, 21);
             this.rbtnRezervacija.TabIndex = 64;
@@ -360,7 +362,7 @@
             this.rbtnKupnja.AutoSize = true;
             this.rbtnKupnja.Checked = true;
             this.rbtnKupnja.Location = new System.Drawing.Point(313, 257);
-            this.rbtnKupnja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnKupnja.Margin = new System.Windows.Forms.Padding(4);
             this.rbtnKupnja.Name = "rbtnKupnja";
             this.rbtnKupnja.Size = new System.Drawing.Size(73, 21);
             this.rbtnKupnja.TabIndex = 63;
@@ -372,7 +374,7 @@
             // 
             this.cboxOdabirSjedala.FormattingEnabled = true;
             this.cboxOdabirSjedala.Location = new System.Drawing.Point(163, 304);
-            this.cboxOdabirSjedala.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxOdabirSjedala.Margin = new System.Windows.Forms.Padding(4);
             this.cboxOdabirSjedala.Name = "cboxOdabirSjedala";
             this.cboxOdabirSjedala.Size = new System.Drawing.Size(83, 24);
             this.cboxOdabirSjedala.TabIndex = 62;
@@ -391,7 +393,7 @@
             // 
             this.cboxBrojUlaznica.FormattingEnabled = true;
             this.cboxBrojUlaznica.Location = new System.Drawing.Point(197, 261);
-            this.cboxBrojUlaznica.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxBrojUlaznica.Margin = new System.Windows.Forms.Padding(4);
             this.cboxBrojUlaznica.Name = "cboxBrojUlaznica";
             this.cboxBrojUlaznica.Size = new System.Drawing.Size(48, 24);
             this.cboxBrojUlaznica.TabIndex = 60;
@@ -411,7 +413,7 @@
             // 
             this.pboxOdabirSjedala.Image = ((System.Drawing.Image)(resources.GetObject("pboxOdabirSjedala.Image")));
             this.pboxOdabirSjedala.Location = new System.Drawing.Point(8, 23);
-            this.pboxOdabirSjedala.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pboxOdabirSjedala.Margin = new System.Windows.Forms.Padding(4);
             this.pboxOdabirSjedala.Name = "pboxOdabirSjedala";
             this.pboxOdabirSjedala.Size = new System.Drawing.Size(524, 226);
             this.pboxOdabirSjedala.TabIndex = 57;
@@ -442,7 +444,7 @@
             this.Controls.Add(this.btnPotvrdaRezervacije);
             this.Controls.Add(this.lblKorisnickoIme);
             this.Controls.Add(this.pictureBox2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormRezervacijaUlaznica";
             this.Text = "Rezervacija ulaznica";
             this.Load += new System.EventHandler(this.FormRezervacijaUlaznica_Load);

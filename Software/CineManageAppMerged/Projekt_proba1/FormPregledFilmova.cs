@@ -206,32 +206,79 @@ namespace Projekt_proba1
 
         private void btnDodajNoviFilm_Click(object sender, EventArgs e)
         {
-            this.Close();
-            FormDodavanjeFilma frmDodavanjeFilma = new FormDodavanjeFilma();
-            this.Hide();
-            frmDodavanjeFilma.ShowDialog();
-            this.Show();
+            using (var context = new CineManageEntities())
+            {
+                var queryDvorane = from d in context.Dvoranas
+                                   where d.popunjena_dvorana == 0
+                                   select d;
+                List<Dvorana> dvorane = queryDvorane.ToList();
+
+                //ako su sve dvorane popunjene nemoze se dodavati film
+                if (dvorane.Count() != 0)
+                {
+                    FormDodavanjeFilma frmDodavanjeFilma = new FormDodavanjeFilma();
+                    this.Hide();
+                    frmDodavanjeFilma.ShowDialog();
+                    this.Show();
+                    RefreshFilmovi();
+                }
+                else
+                    MessageBox.Show("Nema slobodnih dvorana!");
+            }
         }
 
         private void btnObrisi_Click(object sender, EventArgs e)
         {
-            
-            /* isprobat tek nakon dodavanja novog filma od admina
-             * 
-                FilmView odabrani = dgvFilmovi.CurrentRow.DataBoundItem as FilmView;
-                Film odabraniFilm;
-                using (var context = new CineManageEntities())
+            FilmView odabrani = dgvFilmovi.CurrentRow.DataBoundItem as FilmView;
+            using (var context = new CineManageEntities())
+            {
+                var query = from f in context.Films
+                            where f.film_id == odabrani.film_id
+                            select f;
+                Film odabraniFilm = query.Single();
+
+                //brisanje rezervacije izbrisanog odabranog filma
+                var queryRezervacije = from r in context.Rezervacijas
+                                       where r.film_film_id == odabraniFilm.film_id
+                                       select r;
+                List<Rezervacija> rezervacije = queryRezervacije.ToList();
+                foreach (Rezervacija r in rezervacije)
                 {
-                    var query = from f in context.Films
-                                where f.film_id == odabrani.film_id
-                                select f;
-                    odabraniFilm = query.Single();
-                    context.Films.Attach(odabraniFilm);
-                    context.Films.Remove(odabraniFilm);
+                    context.Rezervacijas.Remove(r);
                     context.SaveChanges();
                 }
-            */
-
+                //brisanje zauzetosti sjedala odabranog filma
+                var queryZauzetosti = from z in context.Zauzetost_Sjedala
+                                      where z.Prikazivanje.film_film_id == odabraniFilm.film_id
+                                      select z;
+                List<Zauzetost_Sjedala> zauzetosti = queryZauzetosti.ToList();
+                foreach (Zauzetost_Sjedala z in zauzetosti)
+                {
+                    context.Zauzetost_Sjedala.Remove(z);
+                    context.SaveChanges();
+                }
+                //brisanje svih prikazivanja odabranog filma
+                var queryPrikazivanja = from p in context.Prikazivanjes
+                                        where p.film_film_id == odabraniFilm.film_id
+                                        select p;
+                List<Prikazivanje> prikazivanja = queryPrikazivanja.ToList();
+                foreach (Prikazivanje p in prikazivanja)
+                {
+                    context.Prikazivanjes.Remove(p);
+                    context.SaveChanges();
+                }
+                //mjenjanje zauzetosti dvorane
+                var queryDvorana = from f in context.Films
+                                   where f.Dvorana.dvorana_id == odabraniFilm.Dvorana.dvorana_id
+                                   select f.Dvorana;
+                Dvorana dvorana = queryDvorana.Single();
+                dvorana.popunjena_dvorana = 0;
+                context.SaveChanges();
+                //brisanje filma
+                context.Films.Remove(odabraniFilm);
+                context.SaveChanges();
+            }
+            RefreshFilmovi();
         }
 
         private void btnAzurirajFilm_Click(object sender, EventArgs e)
@@ -241,6 +288,7 @@ namespace Projekt_proba1
             this.Hide();
             frmAzuriranjeFilma.ShowDialog();
             this.Show();
+            RefreshFilmovi();
         }
 
         private void btnPrikazPosovanja_Click(object sender, EventArgs e)
