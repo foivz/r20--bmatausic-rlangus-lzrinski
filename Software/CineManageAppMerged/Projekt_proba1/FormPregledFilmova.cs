@@ -229,61 +229,64 @@ namespace Projekt_proba1
 
         private void btnObrisi_Click(object sender, EventArgs e)
         {
-            FilmView odabrani = dgvFilmovi.CurrentRow.DataBoundItem as FilmView;
-            using (var context = new CineManageEntities())
+            DialogResult dialogResult = MessageBox.Show("Potvrdite brisanje", "Jeste li sigurni da želite obrisati film?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
             {
-                var query = from f in context.Films
-                            where f.film_id == odabrani.film_id
-                            select f;
-                Film odabraniFilm = query.Single();
+                FilmView odabrani = dgvFilmovi.CurrentRow.DataBoundItem as FilmView;
+                using (var context = new CineManageEntities())
+                {
+                    var query = from f in context.Films
+                                where f.film_id == odabrani.film_id
+                                select f;
+                    Film odabraniFilm = query.Single();
 
-                //brisanje rezervacije izbrisanog odabranog filma
-                var queryRezervacije = from r in context.Rezervacijas
-                                       where r.film_film_id == odabraniFilm.film_id
-                                       select r;
-                List<Rezervacija> rezervacije = queryRezervacije.ToList();
-                foreach (Rezervacija r in rezervacije)
-                {
-                    context.Rezervacijas.Remove(r);
+                    //brisanje rezervacije izbrisanog odabranog filma
+                    var queryRezervacije = from r in context.Rezervacijas
+                                           where r.film_film_id == odabraniFilm.film_id
+                                           select r;
+                    List<Rezervacija> rezervacije = queryRezervacije.ToList();
+                    foreach (Rezervacija r in rezervacije)
+                    {
+                        context.Rezervacijas.Remove(r);
+                        context.SaveChanges();
+                    }
+                    //brisanje zauzetosti sjedala odabranog filma
+                    var queryZauzetosti = from z in context.Zauzetost_Sjedala
+                                          where z.Prikazivanje.film_film_id == odabraniFilm.film_id
+                                          select z;
+                    List<Zauzetost_Sjedala> zauzetosti = queryZauzetosti.ToList();
+                    foreach (Zauzetost_Sjedala z in zauzetosti)
+                    {
+                        context.Zauzetost_Sjedala.Remove(z);
+                        context.SaveChanges();
+                    }
+                    //brisanje svih prikazivanja odabranog filma
+                    var queryPrikazivanja = from p in context.Prikazivanjes
+                                            where p.film_film_id == odabraniFilm.film_id
+                                            select p;
+                    List<Prikazivanje> prikazivanja = queryPrikazivanja.ToList();
+                    foreach (Prikazivanje p in prikazivanja)
+                    {
+                        context.Prikazivanjes.Remove(p);
+                        context.SaveChanges();
+                    }
+                    //mjenjanje zauzetosti dvorane
+                    var queryDvorana = from f in context.Films
+                                       where f.Dvorana.dvorana_id == odabraniFilm.Dvorana.dvorana_id
+                                       select f.Dvorana;
+                    Dvorana dvorana = queryDvorana.Single();
+                    dvorana.popunjena_dvorana = 0;
+                    context.SaveChanges();
+                    //brisanje filma
+                    context.Films.Remove(odabraniFilm);
                     context.SaveChanges();
                 }
-                //brisanje zauzetosti sjedala odabranog filma
-                var queryZauzetosti = from z in context.Zauzetost_Sjedala
-                                      where z.Prikazivanje.film_film_id == odabraniFilm.film_id
-                                      select z;
-                List<Zauzetost_Sjedala> zauzetosti = queryZauzetosti.ToList();
-                foreach (Zauzetost_Sjedala z in zauzetosti)
-                {
-                    context.Zauzetost_Sjedala.Remove(z);
-                    context.SaveChanges();
-                }
-                //brisanje svih prikazivanja odabranog filma
-                var queryPrikazivanja = from p in context.Prikazivanjes
-                                        where p.film_film_id == odabraniFilm.film_id
-                                        select p;
-                List<Prikazivanje> prikazivanja = queryPrikazivanja.ToList();
-                foreach (Prikazivanje p in prikazivanja)
-                {
-                    context.Prikazivanjes.Remove(p);
-                    context.SaveChanges();
-                }
-                //mjenjanje zauzetosti dvorane
-                var queryDvorana = from f in context.Films
-                                   where f.Dvorana.dvorana_id == odabraniFilm.Dvorana.dvorana_id
-                                   select f.Dvorana;
-                Dvorana dvorana = queryDvorana.Single();
-                dvorana.popunjena_dvorana = 0;
-                context.SaveChanges();
-                //brisanje filma
-                context.Films.Remove(odabraniFilm);
-                context.SaveChanges();
+                RefreshFilmovi();
             }
-            RefreshFilmovi();
         }
 
         private void btnAzurirajFilm_Click(object sender, EventArgs e)
         {
-            this.Close();
             FormAzuriranjeFilma frmAzuriranjeFilma = new FormAzuriranjeFilma();
             this.Hide();
             frmAzuriranjeFilma.ShowDialog();
