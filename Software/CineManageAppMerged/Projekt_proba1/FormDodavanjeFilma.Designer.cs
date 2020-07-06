@@ -342,6 +342,7 @@
             this.btnObrisiVrijeme.TabIndex = 104;
             this.btnObrisiVrijeme.Text = "Obriši vrijeme";
             this.btnObrisiVrijeme.UseVisualStyleBackColor = true;
+            this.btnObrisiVrijeme.Click += new System.EventHandler(this.btnObrisiVrijeme_Click);
             // 
             // dgvVremena
             // 

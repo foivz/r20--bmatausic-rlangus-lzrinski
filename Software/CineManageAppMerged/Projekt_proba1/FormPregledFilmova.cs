@@ -287,11 +287,25 @@ namespace Projekt_proba1
 
         private void btnAzurirajFilm_Click(object sender, EventArgs e)
         {
-            FormAzuriranjeFilma frmAzuriranjeFilma = new FormAzuriranjeFilma();
-            this.Hide();
-            frmAzuriranjeFilma.ShowDialog();
-            this.Show();
-            RefreshFilmovi();
+            if (dgvFilmovi.CurrentRow != null)
+            {
+                FilmView odabraniFilm = dgvFilmovi.CurrentRow.DataBoundItem as FilmView;
+                Film film;
+                using (var context = new CineManageEntities())
+                {
+                    var query = from f in context.Films
+                                where f.film_id == odabraniFilm.film_id
+                                select f;
+                    film = query.Single();
+                }
+                FormAzuriranjeFilma frmAzuriranjeFilma = new FormAzuriranjeFilma(film);
+                this.Hide();
+                frmAzuriranjeFilma.ShowDialog();
+                this.Show();
+                RefreshFilmovi();
+            }
+            else
+                MessageBox.Show("Odaberite film za ažuriranje!");
         }
 
         private void btnPrikazPosovanja_Click(object sender, EventArgs e)

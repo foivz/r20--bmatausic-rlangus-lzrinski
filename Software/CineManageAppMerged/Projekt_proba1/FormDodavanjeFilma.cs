@@ -141,5 +141,14 @@ namespace Projekt_proba1
             }
             this.Close();
         }
+
+        private void btnObrisiVrijeme_Click(object sender, EventArgs e)
+        {
+            if(dgvVremena.CurrentRow != null)
+            {
+                Raspored_Prikazivanja brisanje = dgvVremena.CurrentRow.DataBoundItem as Raspored_Prikazivanja;
+                odabranaVremena.Remove(brisanje);
+            }
+        }
     }
 }
