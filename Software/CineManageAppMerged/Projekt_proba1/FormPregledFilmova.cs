@@ -188,20 +188,12 @@ namespace Projekt_proba1
 
         private void btnOdjava_Click(object sender, EventArgs e)
         {
-            FormLogin frmLogin = new FormLogin();
             this.Close();
-            this.Hide();
-            frmLogin.ShowDialog();
-            this.Show(); ;
         }
 
         private void btnPrijava_Click(object sender, EventArgs e)
         {
             this.Close();
-            FormLogin frmLogin = new FormLogin();
-            this.Hide();
-            frmLogin.ShowDialog();
-            this.Show();
         }
 
         private void btnDodajNoviFilm_Click(object sender, EventArgs e)
@@ -216,7 +208,7 @@ namespace Projekt_proba1
                 //ako su sve dvorane popunjene nemoze se dodavati film
                 if (dvorane.Count() != 0)
                 {
-                    FormDodavanjeFilma frmDodavanjeFilma = new FormDodavanjeFilma();
+                    FormDodavanjeFilma frmDodavanjeFilma = new FormDodavanjeFilma(korisnik);
                     this.Hide();
                     frmDodavanjeFilma.ShowDialog();
                     this.Show();
@@ -298,7 +290,7 @@ namespace Projekt_proba1
                                 select f;
                     film = query.Single();
                 }
-                FormAzuriranjeFilma frmAzuriranjeFilma = new FormAzuriranjeFilma(film);
+                FormAzuriranjeFilma frmAzuriranjeFilma = new FormAzuriranjeFilma(film, korisnik);
                 this.Hide();
                 frmAzuriranjeFilma.ShowDialog();
                 this.Show();
@@ -310,7 +302,6 @@ namespace Projekt_proba1
 
         private void btnPrikazPosovanja_Click(object sender, EventArgs e)
         {
-            this.Close();
             FormObracun frmObracun = new FormObracun();
             this.Hide();
             frmObracun.ShowDialog();

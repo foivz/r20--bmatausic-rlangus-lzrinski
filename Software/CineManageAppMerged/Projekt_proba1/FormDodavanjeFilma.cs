@@ -14,22 +14,16 @@ namespace Projekt_proba1
     public partial class FormDodavanjeFilma : Form
     {
         private BindingList<Raspored_Prikazivanja> odabranaVremena = new BindingList<Raspored_Prikazivanja>();
-        public FormDodavanjeFilma()
+        private Korisnik korisnik;
+        public FormDodavanjeFilma(Korisnik user)
         {
             InitializeComponent();
-        }
-
-        private void btnOdjava_Click(object sender, EventArgs e)
-        {
-            FormLogin frmLogin = new FormLogin();
-            this.Close();
-            this.Hide();
-            frmLogin.ShowDialog();
-            this.Show();
+            korisnik = user;
         }
 
         private void FormDodavanjeFilma_Load(object sender, EventArgs e)
         {
+            lblKorisnickoIme.Text = korisnik.korisnicko_ime;
             FillCboxes();
             RefreshDGVvremena();
         }

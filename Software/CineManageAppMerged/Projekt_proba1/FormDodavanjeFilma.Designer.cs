@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDodavanjeFilma));
-            this.btnOdjava = new System.Windows.Forms.Button();
             this.pboxKinoSlika = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblKorisnickoIme = new System.Windows.Forms.Label();
@@ -63,19 +62,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvVremena)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnOdjava
-            // 
-            this.btnOdjava.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnOdjava.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOdjava.Location = new System.Drawing.Point(565, 6);
-            this.btnOdjava.Margin = new System.Windows.Forms.Padding(4);
-            this.btnOdjava.Name = "btnOdjava";
-            this.btnOdjava.Size = new System.Drawing.Size(99, 28);
-            this.btnOdjava.TabIndex = 70;
-            this.btnOdjava.Text = "Odjava";
-            this.btnOdjava.UseVisualStyleBackColor = false;
-            this.btnOdjava.Click += new System.EventHandler(this.btnOdjava_Click);
-            // 
             // pboxKinoSlika
             // 
             this.pboxKinoSlika.Image = ((System.Drawing.Image)(resources.GetObject("pboxKinoSlika.Image")));
@@ -103,7 +89,7 @@
             this.lblKorisnickoIme.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.lblKorisnickoIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKorisnickoIme.ForeColor = System.Drawing.Color.FloralWhite;
-            this.lblKorisnickoIme.Location = new System.Drawing.Point(465, 11);
+            this.lblKorisnickoIme.Location = new System.Drawing.Point(574, 13);
             this.lblKorisnickoIme.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblKorisnickoIme.Name = "lblKorisnickoIme";
             this.lblKorisnickoIme.Size = new System.Drawing.Size(87, 20);
@@ -396,7 +382,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnOdjava);
             this.Controls.Add(this.pboxKinoSlika);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblKorisnickoIme);
@@ -414,7 +399,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnOdjava;
         private System.Windows.Forms.PictureBox pboxKinoSlika;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblKorisnickoIme;

@@ -38,7 +38,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnOdjava = new System.Windows.Forms.Button();
             this.pboxKinoSlika = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPotvrdaRezervacije = new System.Windows.Forms.Button();
@@ -59,7 +58,7 @@
             this.cboxBrojUlaznica = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.pboxOdabirSjedala = new System.Windows.Forms.PictureBox();
-            this.dgvRezervacije = new System.Windows.Forms.DataGridView();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pboxFilmCover)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxKinoSlika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -67,7 +66,6 @@
             this.gboxOdabirSjedala.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdabranaSjedala)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxOdabirSjedala)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRezervacije)).BeginInit();
             this.SuspendLayout();
             // 
             // pboxFilmCover
@@ -167,19 +165,6 @@
             this.label2.TabIndex = 46;
             this.label2.Text = "Film:";
             // 
-            // btnOdjava
-            // 
-            this.btnOdjava.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnOdjava.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOdjava.Location = new System.Drawing.Point(713, 7);
-            this.btnOdjava.Margin = new System.Windows.Forms.Padding(4);
-            this.btnOdjava.Name = "btnOdjava";
-            this.btnOdjava.Size = new System.Drawing.Size(99, 28);
-            this.btnOdjava.TabIndex = 42;
-            this.btnOdjava.Text = "Odjava";
-            this.btnOdjava.UseVisualStyleBackColor = false;
-            this.btnOdjava.Click += new System.EventHandler(this.btnOdjava_Click);
-            // 
             // pboxKinoSlika
             // 
             this.pboxKinoSlika.Image = ((System.Drawing.Image)(resources.GetObject("pboxKinoSlika.Image")));
@@ -194,7 +179,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 7);
+            this.label1.Location = new System.Drawing.Point(146, 100);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(431, 36);
@@ -218,7 +203,7 @@
             this.lblKorisnickoIme.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.lblKorisnickoIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKorisnickoIme.ForeColor = System.Drawing.Color.FloralWhite;
-            this.lblKorisnickoIme.Location = new System.Drawing.Point(611, 11);
+            this.lblKorisnickoIme.Location = new System.Drawing.Point(723, 13);
             this.lblKorisnickoIme.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblKorisnickoIme.Name = "lblKorisnickoIme";
             this.lblKorisnickoIme.Size = new System.Drawing.Size(87, 20);
@@ -419,26 +404,24 @@
             this.pboxOdabirSjedala.TabIndex = 57;
             this.pboxOdabirSjedala.TabStop = false;
             // 
-            // dgvRezervacije
+            // btnBack
             // 
-            this.dgvRezervacije.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRezervacije.Location = new System.Drawing.Point(175, 65);
-            this.dgvRezervacije.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvRezervacije.Name = "dgvRezervacije";
-            this.dgvRezervacije.RowHeadersWidth = 51;
-            this.dgvRezervacije.RowTemplate.Height = 24;
-            this.dgvRezervacije.Size = new System.Drawing.Size(639, 150);
-            this.dgvRezervacije.TabIndex = 59;
+            this.btnBack.Location = new System.Drawing.Point(12, 10);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(90, 29);
+            this.btnBack.TabIndex = 69;
+            this.btnBack.Text = "Nazad";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // FormRezervacijaUlaznica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(837, 802);
-            this.Controls.Add(this.dgvRezervacije);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.gboxOdabirSjedala);
             this.Controls.Add(this.gboxInfoTransakcije);
-            this.Controls.Add(this.btnOdjava);
             this.Controls.Add(this.pboxKinoSlika);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPotvrdaRezervacije);
@@ -457,7 +440,6 @@
             this.gboxOdabirSjedala.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdabranaSjedala)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxOdabirSjedala)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRezervacije)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -474,7 +456,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnOdjava;
         private System.Windows.Forms.PictureBox pboxKinoSlika;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnPotvrdaRezervacije;
@@ -495,6 +476,6 @@
         private System.Windows.Forms.DataGridView dgvOdabranaSjedala;
         private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dgvRezervacije;
+        private System.Windows.Forms.Button btnBack;
     }
 }

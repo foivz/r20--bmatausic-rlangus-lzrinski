@@ -22,47 +22,22 @@ namespace Projekt_proba1
         {
             InitializeComponent();
         }
-
-        private void btnOdjava_Click(object sender, EventArgs e)
-        {
-            FormLogin frmLogin = new FormLogin();
-            this.Close();
-            this.Hide();
-            frmLogin.ShowDialog();
-            this.Show();
-        }
-
-        private void btnPrikaziGraf_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            FormIzvjesceGraf frmIzvjesceGraf = new FormIzvjesceGraf();
-            this.Hide();
-            frmIzvjesceGraf.ShowDialog();
-            this.Show();
-        }
-
         private void FormObracun_Load(object sender, EventArgs e)
         {
             RefreshObracunZarada();
-            RefreshObracunUlaznice();
-            FillCboxFilter();
-            FillCboxFilterUlaznice();
+            FillCboxFilterFilm();
             UkupnaZaradaOdUlaznica();
             UkupnoProdanihUlaznica();
 
-            //todo set korisnik 
             if (korisnik == null)
             {
                 lblKorisnickoIme.Text = "Guest";
-                btnOdjava.Visible = false;
             }
             else
             {
                 lblKorisnickoIme.Text = korisnik.korisnicko_ime;
             }
-
         }
-
 
         private void UkupnoProdanihUlaznica()
         {
@@ -93,60 +68,38 @@ namespace Projekt_proba1
             using (var context = new CineManageEntities())
             {
                 var query = from r in context.Rezervacijas.Include("Film").Include("Raspored_Prikazivanja")
-                            select new { r.rezervacija_id, r.Film.naslov, r.Film.cijena, r.Raspored_Prikazivanja.vrijeme_prikazivanja };
+                            select new RezervacijaView
+                            {
+                                ID_rezervacije = r.rezervacija_id,
+                                Ime_Filma = r.Film.naslov,
+                                Cijena_filma = r.Film.cijena,
+                                Vrijeme_Prikazivanja = r.Raspored_Prikazivanja.vrijeme_prikazivanja
+                            };
+
                 dgvZaradaOdUlaznica.DataSource = query.ToList();
-                dgvZaradaOdUlaznica.Columns[0].HeaderText = "ID";
-                dgvZaradaOdUlaznica.Columns[1].HeaderText = "Ime filma";
-                dgvZaradaOdUlaznica.Columns[2].HeaderText = "Cijena ulaznice";
-                dgvZaradaOdUlaznica.Columns[3].HeaderText = "Vrijeme";
-
+                dgvZaradaOdUlaznica.Columns["ID_rezervacije"].HeaderText = "ID rezervacije";
+                dgvZaradaOdUlaznica.Columns["Ime_Filma"].HeaderText = "Naslov filma";
+                dgvZaradaOdUlaznica.Columns["Cijena_filma"].HeaderText = "Cijena";
+                dgvZaradaOdUlaznica.Columns["Vrijeme_Prikazivanja"].HeaderText = "Datum i vrijeme prikazivanja";
             }
         }
-
-        private void RefreshObracunUlaznice()
-        {
-            //todo count all uniqe and display
-        }
-
-        private void FillCboxFilter()
+        private void FillCboxFilterFilm()
         {
             using (var context = new CineManageEntities())
             {
                 var query = from f in context.Films
                             orderby f.naslov
                             select f;
-                List<Film> filmovi = query.ToList();
-                List<string> naziviFilmova = new List<string>();
-                foreach (Film f in filmovi)
-                {
-                    naziviFilmova.Add(f.naslov);
-                }
-                cboxFilterZaradaFilm.DataSource = naziviFilmova;
-                cboxFilterUlazniceFilm.DataSource = naziviFilmova;
-            }
-        }
-
-        private void FillCboxFilterUlaznice()
-        {
-            using (var context = new CineManageEntities())
-            {
-                var query = from f in context.Films
-                            orderby f.naslov
-                            select f;
-                List<Film> filmovi = query.ToList();
-                List<string> naziviFilmova = new List<string>();
-                foreach (Film f in filmovi)
-                {
-                    naziviFilmova.Add(f.naslov);
-                }
-                cboxFilterUlazniceFilm.DataSource = naziviFilmova;
+                cboxFilterZaradaFilm.DataSource = query.ToList(); ;
+                cboxFilterUlazniceFilm.DataSource = query.ToList();
+                cboxFilmIzvjestaj.DataSource = query.ToList();
             }
         }
         private void cboxFilterZaradaFilm_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            string nazivFilma = cboxFilterZaradaFilm.SelectedItem as string;
-            FilterImenaFilmova(nazivFilma);
-            UkupnaZaradaOdUlaznicaFilter(nazivFilma);
+            Film nazivFilma = cboxFilterZaradaFilm.SelectedItem as Film;
+            FilterImenaFilmova(nazivFilma.naslov);
+            UkupnaZaradaOdUlaznicaFilter(nazivFilma.naslov);
         }
         
         private void FilterImenaFilmova(string nazivFilma)
@@ -155,12 +108,18 @@ namespace Projekt_proba1
             {
                 var query = from r in context.Rezervacijas
                             where r.Film.naslov == nazivFilma
-                            select new { r.rezervacija_id, r.Film.naslov, r.Film.cijena, r.Raspored_Prikazivanja.vrijeme_prikazivanja };
+                            select new RezervacijaView
+                            {
+                                ID_rezervacije = r.rezervacija_id,
+                                Ime_Filma = r.Film.naslov,
+                                Cijena_filma = r.Film.cijena,
+                                Vrijeme_Prikazivanja = r.Raspored_Prikazivanja.vrijeme_prikazivanja
+                            };
                 dgvZaradaOdUlaznica.DataSource = query.ToList();
-                dgvZaradaOdUlaznica.Columns[0].HeaderText = "ID";
-                dgvZaradaOdUlaznica.Columns[1].HeaderText = "Ime filma";
-                dgvZaradaOdUlaznica.Columns[2].HeaderText = "Cijena ulaznice";
-                dgvZaradaOdUlaznica.Columns[3].HeaderText = "Razdoblje";
+                dgvZaradaOdUlaznica.Columns["ID_rezervacije"].HeaderText = "ID rezervacije";
+                dgvZaradaOdUlaznica.Columns["Ime_Filma"].HeaderText = "Naslov filma";
+                dgvZaradaOdUlaznica.Columns["Cijena_filma"].HeaderText = "Cijena";
+                dgvZaradaOdUlaznica.Columns["Vrijeme_Prikazivanja"].HeaderText = "Datum i vrijeme prikazivanja";
             }
         }
 
@@ -168,7 +127,7 @@ namespace Projekt_proba1
         {
             using (var context = new CineManageEntities())
             {
-                var query = from r in context.Rezervacijas.Include("Film")
+                var query = from r in context.Rezervacijas
                             where r.Film.naslov == nazivFilma
                             select r.Film.cijena;
                 double ukupnaZarada = query.Sum();
@@ -177,64 +136,39 @@ namespace Projekt_proba1
             }
         }
 
-
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
         private void cboxFilterUlazniceFilm_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            string nazivFilma = cboxFilterUlazniceFilm.SelectedItem as string;
-            FilterImenaFilmovaUlaznice(nazivFilma);
-            
-        }
-
-        private void FilterImenaFilmovaUlaznice(string nazivFilma)
-        {
-            if (dgvBrojProdanihUlaznica.Rows.Count > 0)
-            {
-                DataGridViewRow dgvDel = dgvBrojProdanihUlaznica.Rows[0];
-                dgvBrojProdanihUlaznica.Rows.Remove(dgvDel);
-
-            }
+            Film odabrani = cboxFilterUlazniceFilm.SelectedItem as Film;
             using (var context = new CineManageEntities())
-            {   
+            {
                 var query = from r in context.Rezervacijas
-                            where r.Film.naslov == nazivFilma
-                            select new { r.Film.naslov };
-
-                string count = query.Count().ToString();
-                string imeFilma = nazivFilma;
-
-                dgvBrojProdanihUlaznica.ColumnCount = 2;
-                dgvBrojProdanihUlaznica.Columns[0].HeaderText = "Ime filma";
-                dgvBrojProdanihUlaznica.Columns[1].HeaderText = "Broj prodanih ulaznica";
-                string[] red = new string[] { imeFilma, count };
-                dgvBrojProdanihUlaznica.Rows.Add(red);
-                lblUkUlaznice.Text = count;
+                            where r.Film.film_id == odabrani.film_id
+                            select r;
+                List<Rezervacija> rezervacijaFilm = query.ToList();
+                lblUkUlaznice.Text = rezervacijaFilm.Count().ToString();
+                lblNazivProdano.Text = odabrani.naslov;
             }
         }
-        //todo filter po danu za prodane ulaznice
-        private void rbtnFilterZaradaDan_CheckedChanged(object sender, EventArgs e)
+
+        private void btnIzradiIzvjestaj_Click(object sender, EventArgs e)
         {
-            FilterZaradePoDanu();
+            SviFilmoviReportForm form = new SviFilmoviReportForm();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
         }
 
-        private void FilterZaradePoDanu()
-        {   /*
-            using (var context = new CineManageEntities())
-            {
-
-                var query = from r in context.Rezervacijas.Include("Raspored_Prikazivanja").Include("Film")
-                            orderby r.Raspored_Prikazivanja.vrijeme_prikazivanja
-                            group context.Rezervacijas.Include("Raspored_Prikazivanja").Include("Film") by r.Raspored_Prikazivanja.vrijeme_prikazivanja into grp
-                            var sum = context.Rezervacijas.Include("Raspored_Prikazivanja").Include("Film").Where(x => x.Raspored_Prikazivanja.vrijeme_prikazivanja  == grp.Key).Sum(x => x.Film.cijena)
-                            select new
-                            {
-                                Date = grp.Key,
-                                Sum =  sum
-                            };
-
-                dgvZaradaOdUlaznica.DataSource = query.ToList();*/
-
-
-        
+        private void btnIzradiIzvjestajFilm_Click(object sender, EventArgs e)
+        {
+            Film odabrani = cboxFilmIzvjestaj.SelectedItem as Film;
+            OdabraniFilmReportForm form = new OdabraniFilmReportForm(odabrani.film_id);
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
         }
     }
 }

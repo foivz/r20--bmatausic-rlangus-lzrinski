@@ -37,10 +37,8 @@
             this.linkStvoriRacun = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnPrijava = new System.Windows.Forms.Button();
-            this.dgvLista = new System.Windows.Forms.DataGridView();
             this.btnNeregistrirani = new System.Windows.Forms.Button();
             this.btnSofty = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
             // splitter1
@@ -102,7 +100,7 @@
             // linkStvoriRacun
             // 
             this.linkStvoriRacun.AutoSize = true;
-            this.linkStvoriRacun.Location = new System.Drawing.Point(365, 366);
+            this.linkStvoriRacun.Location = new System.Drawing.Point(356, 366);
             this.linkStvoriRacun.Name = "linkStvoriRacun";
             this.linkStvoriRacun.Size = new System.Drawing.Size(42, 17);
             this.linkStvoriRacun.TabIndex = 7;
@@ -128,16 +126,6 @@
             this.btnPrijava.Text = "Prijavi se";
             this.btnPrijava.UseVisualStyleBackColor = true;
             this.btnPrijava.Click += new System.EventHandler(this.btnPrijava_Click);
-            // 
-            // dgvLista
-            // 
-            this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLista.Location = new System.Drawing.Point(12, 12);
-            this.dgvLista.Name = "dgvLista";
-            this.dgvLista.RowHeadersWidth = 51;
-            this.dgvLista.RowTemplate.Height = 24;
-            this.dgvLista.Size = new System.Drawing.Size(552, 110);
-            this.dgvLista.TabIndex = 10;
             // 
             // btnNeregistrirani
             // 
@@ -166,7 +154,6 @@
             this.ClientSize = new System.Drawing.Size(571, 392);
             this.Controls.Add(this.btnSofty);
             this.Controls.Add(this.btnNeregistrirani);
-            this.Controls.Add(this.dgvLista);
             this.Controls.Add(this.btnPrijava);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.linkStvoriRacun);
@@ -178,8 +165,6 @@
             this.Controls.Add(this.splitter1);
             this.Name = "FormLogin";
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.FormLogin_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,7 +181,6 @@
         private System.Windows.Forms.LinkLabel linkStvoriRacun;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPrijava;
-        private System.Windows.Forms.DataGridView dgvLista;
         private System.Windows.Forms.Button btnNeregistrirani;
         private System.Windows.Forms.Button btnSofty;
     }

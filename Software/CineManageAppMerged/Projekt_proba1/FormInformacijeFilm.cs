@@ -33,12 +33,10 @@ namespace Projekt_proba1
             if (korisnik != null)
             {
                 lblKorisnickoIme.Text = korisnik.korisnicko_ime;
-                btnPrijava.Visible = false;
             }
             else
             {
                 lblKorisnickoIme.Text = "Guest";
-                btnOdjava.Visible = false;
             }
             lblFilmIme.Text = film.naslov;
             lblRedateljFilma.Text = film.readtelj;
@@ -68,7 +66,9 @@ namespace Projekt_proba1
                     throw new NeregistriraniKorisnikException("Kako biste mogli koristiti ovu funkcionalnost, morate se ulogirati!");
                 }
                 FormRezervacijaUlaznica form = new FormRezervacijaUlaznica(korisnik, film, vrijeme);
+                this.Hide();
                 form.ShowDialog();
+                this.Show();
             }
             catch (Iznimke.NeregistriraniKorisnikException ex)
             {
@@ -76,22 +76,9 @@ namespace Projekt_proba1
             }
         }
 
-        private void btnOdjava_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            FormLogin frmLogin = new FormLogin();
-            this.Close();
-            this.Hide();
-            frmLogin.ShowDialog();
-            this.Show();
-        }
-
-        private void btnPrijava_Click(object sender, EventArgs e)
-        {
-            FormLogin frmLogin = new FormLogin();
-            this.Close();
-            this.Hide();
-            frmLogin.ShowDialog();
-            this.Show();
+            Close();
         }
     }
 }

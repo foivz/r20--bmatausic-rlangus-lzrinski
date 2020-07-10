@@ -31,23 +31,7 @@ namespace Projekt_proba1
             PopuniInfo();
             PopuniCboxSjedala();
             RefreshDGV();
-            RefreshDGVrezervacije();
         }
-
-        private void RefreshDGVrezervacije()
-        {
-            using (var context = new CineManageEntities())
-            {
-                var query = from r in context.Rezervacijas.Include("Film").Include("Korisnik").Include("Raspored_Prikazivanja").Include("Sjedalo").Include("Vrsta_Transakcije")
-                            select r;
-                dgvRezervacije.DataSource = query.ToList();
-                dgvRezervacije.Columns["film_film_id"].Visible = false;
-                dgvRezervacije.Columns["sjedala_sjedalo_id"].Visible = false;
-                dgvRezervacije.Columns["korisnik_korisnik_id"].Visible = false;
-                dgvRezervacije.Columns["raspored_prikazivanja_raspored_prikazivanja_id"].Visible = false;
-            }
-        }
-
         private void PopuniCboxSjedala()
         {
             using (var contex = new CineManageEntities())
@@ -83,6 +67,10 @@ namespace Projekt_proba1
             dgvOdabranaSjedala.Columns["Dvorana"].Visible = false;
             dgvOdabranaSjedala.Columns["Rezervacijas"].Visible = false;
             dgvOdabranaSjedala.Columns["Zauzetost_Sjedala"].Visible = false;
+            dgvOdabranaSjedala.Columns["sjedalo_id"].Visible = false;
+            dgvOdabranaSjedala.Columns["mjesto"].HeaderText = "Broj sjedala";
+            dgvOdabranaSjedala.Columns["red"].HeaderText = "Red sjedala";
+            dgvOdabranaSjedala.Columns["dvorana_dvorana_id"].Visible = false;
 
         }
 
@@ -156,18 +144,12 @@ namespace Projekt_proba1
             }
             sjedala = new BindingList<Sjedalo>();
             RefreshDGV();
-            RefreshDGVrezervacije();
             PopuniCboxSjedala();
         }
 
-        private void btnOdjava_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            
-            FormLogin frmLogin = new FormLogin();
-            this.Close();
-            this.Hide();
-            frmLogin.ShowDialog();
-            this.Show();
+            Close();
         }
     }
 }

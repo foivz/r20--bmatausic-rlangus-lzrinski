@@ -14,22 +14,15 @@ namespace Projekt_proba1
     public partial class FormAzuriranjeFilma : Form
     {
         private Film film;
+        private Korisnik korisnik;
         private BindingList<Raspored_Prikazivanja> odabranaVremena = new BindingList<Raspored_Prikazivanja>();
         private List<Raspored_Prikazivanja> odabranaVremenaBaza = new List<Raspored_Prikazivanja>();
-        public FormAzuriranjeFilma(Film odabrani)
+        public FormAzuriranjeFilma(Film odabrani, Korisnik user)
         {
             InitializeComponent();
             film = odabrani;
+            korisnik = user;
         }
-
-        private void btnOdjava_Click(object sender, EventArgs e)
-        {
-            FormLogin frmLogin = new FormLogin();
-            this.Close();
-            frmLogin.ShowDialog();
-            this.Show();
-        }
-
         private void FormAzuriranjeFilma_Load(object sender, EventArgs e)
         {
             FillCboxes();
@@ -86,6 +79,7 @@ namespace Projekt_proba1
 
         private void FillFilmInfo()
         {
+            lblKorisnickoIme.Text = korisnik.korisnicko_ime;
             tboxDodajImeFilma.Text = film.naslov;
             tboxDodajRedateljFilma.Text = film.readtelj;
             tboxDodajSadrzajFilma.Text = film.opis;
@@ -175,6 +169,11 @@ namespace Projekt_proba1
                     }
                 }
             }
+            this.Close();
+        }
+
+        private void btnCancelDodavanje_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

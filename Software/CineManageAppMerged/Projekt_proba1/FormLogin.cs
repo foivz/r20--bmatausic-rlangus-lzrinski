@@ -22,7 +22,6 @@ namespace Projekt_proba1
         {
             FormStvaranjeKorisnika form = new FormStvaranjeKorisnika();
             form.ShowDialog();
-            RefreshDGV();
         }
 
         private void btnPrijava_Click(object sender, EventArgs e)
@@ -52,23 +51,6 @@ namespace Projekt_proba1
                 MessageBox.Show(ex.Poruka);
             }
         }
-
-        private void FormLogin_Load(object sender, EventArgs e)
-        {
-            RefreshDGV();
-        }
-
-        private void RefreshDGV()
-        {
-            using (var context = new CineManageEntities())
-            {
-                var query = from p in context.Korisniks.Include("Rola")
-                            select p;
-                dgvLista.DataSource = query.ToList();
-                dgvLista.Columns["Rezervacijas"].Visible = false;
-            }
-        }
-
         private Korisnik DohvatiKorisnika(string kime)
         {
             Korisnik user;
