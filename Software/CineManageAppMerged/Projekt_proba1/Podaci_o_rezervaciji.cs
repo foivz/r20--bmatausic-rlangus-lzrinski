@@ -9,7 +9,7 @@ namespace Projekt_proba1
     public class Podaci_o_rezervaciji
     {
         public string ImeKorisnika { get; set; }
-        public string UsernameKorisnika { get; set; }
+        public int BrojSjedala { get; set; }
         public string EmailKorisnika { get; set; }
         public string NazivFilma { get; set; }
         public double CijenaFilma { get; set; }

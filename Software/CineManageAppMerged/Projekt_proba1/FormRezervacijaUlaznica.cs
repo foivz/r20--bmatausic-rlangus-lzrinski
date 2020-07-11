@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RestSharp;
+using RestSharp.Authenticators;
 
 namespace Projekt_proba1
 {
@@ -104,18 +106,16 @@ namespace Projekt_proba1
 
         private void btnPotvrdaRezervacije_Click(object sender, EventArgs e)
         {
-            List<Podaci_o_rezervaciji> podaciZaEmail = new List<Podaci_o_rezervaciji>();
 
             Podaci_o_rezervaciji podatak = new Podaci_o_rezervaciji
             {
                 ImeKorisnika = korisnik.ime + " " + korisnik.prezime,
-                UsernameKorisnika = korisnik.korisnicko_ime,
+                BrojSjedala = sjedala.Count,
                 EmailKorisnika = korisnik.email,
                 NazivFilma = film.naslov,
                 CijenaFilma = film.cijena * sjedala.Count,
                 VrijemePrikazivanja = vrijeme.vrijeme_prikazivanja
             };
-            podaciZaEmail.Add(podatak);
 
             Vrsta_Transakcije vrsta;
             foreach (Sjedalo s in sjedala)
@@ -158,6 +158,23 @@ namespace Projekt_proba1
             sjedala = new BindingList<Sjedalo>();
             RefreshDGV();
             PopuniCboxSjedala();
+
+            var klijent = new RestSharp.RestClient("https://api.mailgun.net/v3");
+            klijent.Authenticator = new HttpBasicAuthenticator("api", "21ca885a2a4a526a6596df5a98c4091a-87c34c41-4021b56b");
+
+            RestSharp.IRestRequest request = new RestSharp.RestRequest("/sandbox1e672fbeb4cc407fb2cbd1b04a75808d.mailgun.org/messages", RestSharp.Method.POST);
+            
+            string mailText = $"<html><head><link rel='stylesheet' type='text/css' href='https://develooper.codes/bootstrap.min2.css'></head><body><div class='container'><div class='jumbotron' style='margin-top:100px;background-color:#f7f7f7'><div style='background-color:#313131;border-radius:10px;margin-bottom:20px'><img class='img-fluid' src='https://develooper.codes/cinemanage%20logo.jpg' width='400' style='margin-left:auto;margin-right:auto;display:block'></div><h2 class='display-5' style='color:#313131;text-align:center;vertical-align:middle'>Pozdrav, {podatak.ImeKorisnika}</h2><p class='lead' style='color:#313131;text-align:center;vertical-align:middle'>Dobrodošao u svijet Cine Manage rezervacija!</p><hr class='my-4'><p style='color:#313131;text-align:center;vertical-align:middle'>Ovim putem podsjećamo te na tvoje rezervacije!</p><p style='color:#313131;text-align:center;vertical-align:middle; margin-bottom:50px;'><b>Film: {podatak.NazivFilma}</b><br><b>Datum: {podatak.VrijemePrikazivanja}</b><br><b>Sjedala: {podatak.BrojSjedala}</b><br><b>Ukupno plaćeno: {podatak.CijenaFilma} kn</b></p></div></div></body></html>";
+
+            request.AddParameter("from", "Cine Manage <podsjetnik@cinemanage.com>");
+            request.AddParameter("h:Reply-To", podatak.EmailKorisnika);
+            request.AddParameter("to", podatak.EmailKorisnika);
+            request.AddParameter("subject", "Podsjetnik za rezervaciju");
+            request.AddParameter("html", mailText);
+                       
+            RestSharp.IRestResponse response = klijent.Execute(request);
+            MessageBox.Show("Uspješno ste rezervirali ulaznice!");
+            this.Close();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
