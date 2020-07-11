@@ -18,9 +18,9 @@ Samom pristupu aplikaciji korisnik će moći pregledati popis filmova koji se tr
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
 F01 | Login | Za pristup programu potrebnba je autentifikacija korisnika pomoću login funkcionalnosti. Korisnik se logira s podacima koji su mu dodijeljeni prilikom korisnikovog zahtjeva za prijavom | Bruno Mataušić
-F02 | Pregled filmova i prikazivanja | Korisnik može pregledavati katalog filmova koji se trenutno prikazuju, te odabrati filmove kako bi pogledao vremena prikazivanja | Luka Zrinski
+F02 | Pregled filmova i prikazivanja | Korisnik može pregledavati katalog filmova koji se trenutno prikazuju, te odabrati filmove kako bi pogledao vremena prikazivanja | Bruno Mataušić
 F03 | Kupovina i rezervacija karata | Kada korisnik odabere vrijeme prikazivanja odredenog filma, nakon toga će moći i rezervirati ili kupiti kartu | Bruno Mataušić
-F04 | Dodavanje, brisanje i ažuriranje podataka | Osoba koja se prijavi administratorskim podacima moći će upravljati podacima o aktivnim filmovima, prikazivanjima, itd. | Tomislav Lukežić
+F04 | Dodavanje, brisanje i ažuriranje podataka | Osoba koja se prijavi administratorskim podacima moći će upravljati podacima o aktivnim filmovima, prikazivanjima, itd. | Bruno Mataušić
 F05 | Vođenje obračuna | Podaci o cijenama i broju prodanih ulaznica | Luka Zrinski
 F06| Podsjetnik za film | Ako korisnik ima kupljen ili rezerviran film, kod ulogiravanja će se pojaviti podsjetnik o navedenom filmu | Robert Langus
 F07| Kreiranje naprednih PDF izvješća | Na temelju podataka o poslovanju kreiraju se PDF izvješća | Tomislav Lukežić
