@@ -302,7 +302,7 @@ namespace Projekt_proba1
 
         private void btnPrikazPosovanja_Click(object sender, EventArgs e)
         {
-            FormObracun frmObracun = new FormObracun();
+            FormObracun frmObracun = new FormObracun(korisnik);
             this.Hide();
             frmObracun.ShowDialog();
             this.Show();

@@ -156,12 +156,6 @@
     <Compile Include="Korisnik.cs">
       <DependentUpon>CineManageModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="OdabraniFilmReportForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OdabraniFilmReportForm.Designer.cs">
-      <DependentUpon>OdabraniFilmReportForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Prikazivanje.cs">
       <DependentUpon>CineManageModel.tt</DependentUpon>
     </Compile>
@@ -221,9 +215,6 @@
     <EmbeddedResource Include="FormStvaranjeKorisnika.resx">
       <DependentUpon>FormStvaranjeKorisnika.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OdabraniFilmReportForm.resx">
-      <DependentUpon>OdabraniFilmReportForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -233,7 +224,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="rptOdabraniFIlm.rdlc" />
     <EmbeddedResource Include="rptSviFilmovi.rdlc" />
     <EmbeddedResource Include="SviFilmoviReportForm.resx">
       <DependentUpon>SviFilmoviReportForm.cs</DependentUpon>

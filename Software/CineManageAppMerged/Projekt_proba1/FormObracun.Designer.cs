@@ -45,11 +45,8 @@
             this.lblNazivProdano = new System.Windows.Forms.Label();
             this.cboxFilterUlazniceFilm = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnIzradiIzvjestajFilm = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cboxFilmIzvjestaj = new System.Windows.Forms.ComboBox();
             this.gboxInfoTransakcije.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaradaOdUlaznica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxKinoSlika)).BeginInit();
@@ -147,7 +144,7 @@
             // 
             // btnIzradiIzvjestaj
             // 
-            this.btnIzradiIzvjestaj.Location = new System.Drawing.Point(16, 805);
+            this.btnIzradiIzvjestaj.Location = new System.Drawing.Point(224, 806);
             this.btnIzradiIzvjestaj.Margin = new System.Windows.Forms.Padding(4);
             this.btnIzradiIzvjestaj.Name = "btnIzradiIzvjestaj";
             this.btnIzradiIzvjestaj.Size = new System.Drawing.Size(413, 50);
@@ -236,17 +233,6 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Filter po filmu:";
             // 
-            // btnIzradiIzvjestajFilm
-            // 
-            this.btnIzradiIzvjestajFilm.Location = new System.Drawing.Point(437, 805);
-            this.btnIzradiIzvjestajFilm.Margin = new System.Windows.Forms.Padding(4);
-            this.btnIzradiIzvjestajFilm.Name = "btnIzradiIzvjestajFilm";
-            this.btnIzradiIzvjestajFilm.Size = new System.Drawing.Size(389, 50);
-            this.btnIzradiIzvjestajFilm.TabIndex = 67;
-            this.btnIzradiIzvjestajFilm.Text = "Izradi izvještaj odabranog filma";
-            this.btnIzradiIzvjestajFilm.UseVisualStyleBackColor = true;
-            this.btnIzradiIzvjestajFilm.Click += new System.EventHandler(this.btnIzradiIzvjestajFilm_Click);
-            // 
             // btnBack
             // 
             this.btnBack.Location = new System.Drawing.Point(12, 7);
@@ -260,40 +246,19 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(147, 774);
+            this.label3.Location = new System.Drawing.Point(367, 773);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(140, 17);
             this.label3.TabIndex = 69;
             this.label3.Text = "-------Svi filmovi-------";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(477, 774);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(161, 17);
-            this.label4.TabIndex = 70;
-            this.label4.Text = "Odaberi film za izvještaj:";
-            // 
-            // cboxFilmIzvjestaj
-            // 
-            this.cboxFilmIzvjestaj.FormattingEnabled = true;
-            this.cboxFilmIzvjestaj.Location = new System.Drawing.Point(645, 771);
-            this.cboxFilmIzvjestaj.Margin = new System.Windows.Forms.Padding(4);
-            this.cboxFilmIzvjestaj.Name = "cboxFilmIzvjestaj";
-            this.cboxFilmIzvjestaj.Size = new System.Drawing.Size(160, 24);
-            this.cboxFilmIzvjestaj.TabIndex = 11;
-            // 
             // FormObracun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 869);
-            this.Controls.Add(this.cboxFilmIzvjestaj);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(843, 920);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.btnIzradiIzvjestajFilm);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gboxInfoTransakcije);
             this.Controls.Add(this.pboxKinoSlika);
@@ -330,14 +295,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cboxFilterUlazniceFilm;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnIzradiIzvjestajFilm;
         private System.Windows.Forms.Label lblSumaUlaznice;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblUkUlaznice;
         private System.Windows.Forms.Label lblNazivProdano;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cboxFilmIzvjestaj;
     }
 }

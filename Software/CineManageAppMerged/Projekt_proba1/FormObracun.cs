@@ -18,25 +18,13 @@ namespace Projekt_proba1
             InitializeComponent();
             korisnik = user;
         }
-        public FormObracun()
-        {
-            InitializeComponent();
-        }
         private void FormObracun_Load(object sender, EventArgs e)
         {
             RefreshObracunZarada();
             FillCboxFilterFilm();
             UkupnaZaradaOdUlaznica();
             UkupnoProdanihUlaznica();
-
-            if (korisnik == null)
-            {
-                lblKorisnickoIme.Text = "Guest";
-            }
-            else
-            {
-                lblKorisnickoIme.Text = korisnik.korisnicko_ime;
-            }
+            lblKorisnickoIme.Text = korisnik.korisnicko_ime;
         }
 
         private void UkupnoProdanihUlaznica()
@@ -92,7 +80,6 @@ namespace Projekt_proba1
                             select f;
                 cboxFilterZaradaFilm.DataSource = query.ToList(); ;
                 cboxFilterUlazniceFilm.DataSource = query.ToList();
-                cboxFilmIzvjestaj.DataSource = query.ToList();
             }
         }
         private void cboxFilterZaradaFilm_SelectionChangeCommitted(object sender, EventArgs e)
@@ -157,15 +144,6 @@ namespace Projekt_proba1
         private void btnIzradiIzvjestaj_Click(object sender, EventArgs e)
         {
             SviFilmoviReportForm form = new SviFilmoviReportForm();
-            this.Hide();
-            form.ShowDialog();
-            this.Show();
-        }
-
-        private void btnIzradiIzvjestajFilm_Click(object sender, EventArgs e)
-        {
-            Film odabrani = cboxFilmIzvjestaj.SelectedItem as Film;
-            OdabraniFilmReportForm form = new OdabraniFilmReportForm(odabrani.film_id);
             this.Hide();
             form.ShowDialog();
             this.Show();
