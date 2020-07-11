@@ -156,6 +156,7 @@
     <Compile Include="Korisnik.cs">
       <DependentUpon>CineManageModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Podaci_o_rezervaciji.cs" />
     <Compile Include="Prikazivanje.cs">
       <DependentUpon>CineManageModel.tt</DependentUpon>
     </Compile>

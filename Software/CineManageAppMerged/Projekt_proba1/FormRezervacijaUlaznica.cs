@@ -104,6 +104,19 @@ namespace Projekt_proba1
 
         private void btnPotvrdaRezervacije_Click(object sender, EventArgs e)
         {
+            List<Podaci_o_rezervaciji> podaciZaEmail = new List<Podaci_o_rezervaciji>();
+
+            Podaci_o_rezervaciji podatak = new Podaci_o_rezervaciji
+            {
+                ImeKorisnika = korisnik.ime + " " + korisnik.prezime,
+                UsernameKorisnika = korisnik.korisnicko_ime,
+                EmailKorisnika = korisnik.email,
+                NazivFilma = film.naslov,
+                CijenaFilma = film.cijena * sjedala.Count,
+                VrijemePrikazivanja = vrijeme.vrijeme_prikazivanja
+            };
+            podaciZaEmail.Add(podatak);
+
             Vrsta_Transakcije vrsta;
             foreach (Sjedalo s in sjedala)
             {
