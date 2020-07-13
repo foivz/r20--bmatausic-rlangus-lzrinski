@@ -101,75 +101,90 @@ namespace Projekt_proba1
         {
             Dvorana dvorana = cboxDodajDvoranu.SelectedItem as Dvorana;
             Kategorija kategorija = cboxDodajZanrFilma.SelectedItem as Kategorija;
-            using (var context = new CineManageEntities())
+            try
             {
-                context.Films.Attach(film);
-                //ako je odabrana dvorana različita od dvorane filma u bazi, postavi dvoranu filma u bazi da je nepopunjena
-                if(film.Dvorana.dvorana_id != dvorana.dvorana_id)
+                using (var context = new CineManageEntities())
                 {
-                    film.Dvorana.popunjena_dvorana = 0;
-                    context.SaveChanges();
-                }
-                //popuni podatke filma u bazi i popuni dvoranu u kojoj se prikazuej film
-                film.naslov = tboxDodajImeFilma.Text;
-                film.readtelj = tboxDodajRedateljFilma.Text;
-                film.opis = tboxDodajSadrzajFilma.Text;
-                film.trajanje = int.Parse(tboxDodajTrajanjeFilma.Text);
-                film.cijena = double.Parse(tboxDodajCijenuUlaznice.Text);
-                context.Dvoranas.Attach(dvorana);
-                film.Dvorana = dvorana;
-                context.Kategorijas.Attach(kategorija);
-                film.Kategorija = kategorija;
-                film.Dvorana.popunjena_dvorana = 1;
-
-                var queryRasporedi = from p in context.Prikazivanjes
-                                     where p.film_film_id == film.film_id
-                                     select p.Raspored_Prikazivanja;
-                List<Raspored_Prikazivanja> rasporediFilma = queryRasporedi.ToList();
-                foreach (Raspored_Prikazivanja r in odabranaVremena)
-                {
-                    if (!odabranaVremenaBaza.Contains(r))
+                    if (tboxDodajImeFilma.Text == "" || tboxDodajRedateljFilma.Text == "" || tboxDodajSadrzajFilma.Text == "" || tboxDodajTrajanjeFilma.Text == "" || tboxDodajCijenuUlaznice.Text == "" || odabranaVremena.Count == 0)
                     {
-                        Prikazivanje novo = new Prikazivanje
-                        {
-                            raspored_prikazivanja_idraspored_prikazivanja = r.raspored_prikazivanja_id,
-                            film_film_id = film.film_id
-                        };
-                        context.Prikazivanjes.Add(novo);
+                        throw new Iznimke.InformacijeFilmaException("Nisu popunjene sve vrijednosti!");
+                    }
+                    context.Films.Attach(film);
+                    //ako je odabrana dvorana različita od dvorane filma u bazi, postavi dvoranu filma u bazi da je nepopunjena
+                    if (film.Dvorana.dvorana_id != dvorana.dvorana_id)
+                    {
+                        film.Dvorana.popunjena_dvorana = 0;
                         context.SaveChanges();
                     }
-                }
-                var queryPrikazivanjaTablica = from p in context.Prikazivanjes
-                                               where p.film_film_id == film.film_id
-                                               select p;
-                List<Prikazivanje> prikazivanjaTablica = queryPrikazivanjaTablica.ToList();
-                var queryPrikazivanjeBaza = from z in context.Zauzetost_Sjedala
-                                            where z.Prikazivanje.film_film_id == film.film_id
-                                            select z.Prikazivanje;
-                List<Prikazivanje> prikazivanjaBaza = queryPrikazivanjeBaza.ToList();
-                var querySjedala = from s in context.Sjedaloes
-                                   where s.dvorana_dvorana_id == dvorana.dvorana_id
-                                   select s;
-                List<Sjedalo> sjedala = querySjedala.ToList();
-                foreach (Prikazivanje p in prikazivanjaTablica)
-                {
-                    if (!prikazivanjaBaza.Contains(p))
+                    //popuni podatke filma u bazi i popuni dvoranu u kojoj se prikazuej film
+                    film.naslov = tboxDodajImeFilma.Text;
+                    film.readtelj = tboxDodajRedateljFilma.Text;
+                    film.opis = tboxDodajSadrzajFilma.Text;
+                    film.trajanje = int.Parse(tboxDodajTrajanjeFilma.Text);
+                    film.cijena = double.Parse(tboxDodajCijenuUlaznice.Text);
+                    context.Dvoranas.Attach(dvorana);
+                    film.Dvorana = dvorana;
+                    context.Kategorijas.Attach(kategorija);
+                    film.Kategorija = kategorija;
+                    film.Dvorana.popunjena_dvorana = 1;
+
+                    var queryRasporedi = from p in context.Prikazivanjes
+                                         where p.film_film_id == film.film_id
+                                         select p.Raspored_Prikazivanja;
+                    List<Raspored_Prikazivanja> rasporediFilma = queryRasporedi.ToList();
+                    foreach (Raspored_Prikazivanja r in odabranaVremena)
                     {
-                        foreach (Sjedalo s in sjedala)
+                        if (!odabranaVremenaBaza.Contains(r))
                         {
-                            Zauzetost_Sjedala zauzetost = new Zauzetost_Sjedala
+                            Prikazivanje novo = new Prikazivanje
                             {
-                                zauzeto = 0,
-                                prikazuje_se_prikazuje_se_id = p.prikazuje_se_id,
-                                sjedala_sjedalo_id = s.sjedalo_id
+                                raspored_prikazivanja_idraspored_prikazivanja = r.raspored_prikazivanja_id,
+                                film_film_id = film.film_id
                             };
-                            context.Zauzetost_Sjedala.Add(zauzetost);
+                            context.Prikazivanjes.Add(novo);
                             context.SaveChanges();
                         }
                     }
+                    var queryPrikazivanjaTablica = from p in context.Prikazivanjes
+                                                   where p.film_film_id == film.film_id
+                                                   select p;
+                    List<Prikazivanje> prikazivanjaTablica = queryPrikazivanjaTablica.ToList();
+                    var queryPrikazivanjeBaza = from z in context.Zauzetost_Sjedala
+                                                where z.Prikazivanje.film_film_id == film.film_id
+                                                select z.Prikazivanje;
+                    List<Prikazivanje> prikazivanjaBaza = queryPrikazivanjeBaza.ToList();
+                    var querySjedala = from s in context.Sjedaloes
+                                       where s.dvorana_dvorana_id == dvorana.dvorana_id
+                                       select s;
+                    List<Sjedalo> sjedala = querySjedala.ToList();
+                    foreach (Prikazivanje p in prikazivanjaTablica)
+                    {
+                        if (!prikazivanjaBaza.Contains(p))
+                        {
+                            foreach (Sjedalo s in sjedala)
+                            {
+                                Zauzetost_Sjedala zauzetost = new Zauzetost_Sjedala
+                                {
+                                    zauzeto = 0,
+                                    prikazuje_se_prikazuje_se_id = p.prikazuje_se_id,
+                                    sjedala_sjedalo_id = s.sjedalo_id
+                                };
+                                context.Zauzetost_Sjedala.Add(zauzetost);
+                                context.SaveChanges();
+                            }
+                        }
+                    }
                 }
+                this.Close();
             }
-            this.Close();
+            catch (Iznimke.InformacijeFilmaException ex)
+            {
+                MessageBox.Show(ex.Poruka);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Pogrešni format unosa kod trajanja filma ili cijene ulaznice!");
+            }
         }
 
         private void btnCancelDodavanje_Click(object sender, EventArgs e)

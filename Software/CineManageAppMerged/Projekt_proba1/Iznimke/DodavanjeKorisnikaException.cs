@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projekt_proba1.Iznimke
 {
-    class DodavanjeKorisnikaException : Exception
+    public class DodavanjeKorisnikaException : Exception
     {
         public string Poruka { get; set; }
 

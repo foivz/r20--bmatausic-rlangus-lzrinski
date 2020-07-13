@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projekt_proba1.Iznimke
 {
-    class NeregistriraniKorisnikException : Exception
+    public class NeregistriraniKorisnikException : Exception
     {
         public string Poruka { get; set; }
         public NeregistriraniKorisnikException(string poruka)

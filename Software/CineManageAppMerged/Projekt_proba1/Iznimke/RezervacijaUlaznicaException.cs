@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Projekt_proba1.Iznimke
 {
-    public class LoginException : Exception
+    public class RezervacijaUlaznicaException : Exception
     {
         public string Poruka { get; set; }
 
-        public LoginException(string poruka)
+        public RezervacijaUlaznicaException(string poruka)
         {
             Poruka = poruka;
         }

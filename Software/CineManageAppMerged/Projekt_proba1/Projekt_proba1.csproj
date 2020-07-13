@@ -150,8 +150,10 @@
       <DependentUpon>FormStvaranjeKorisnika.cs</DependentUpon>
     </Compile>
     <Compile Include="Iznimke\DodavanjeKorisnikaException.cs" />
+    <Compile Include="Iznimke\InformacijeFilmaException.cs" />
     <Compile Include="Iznimke\LoginException.cs" />
     <Compile Include="Iznimke\NeregistriraniKorisnikException.cs" />
+    <Compile Include="Iznimke\RezervacijaUlaznicaException.cs" />
     <Compile Include="Kategorija.code.cs" />
     <Compile Include="Kategorija.cs">
       <DependentUpon>CineManageModel.tt</DependentUpon>
