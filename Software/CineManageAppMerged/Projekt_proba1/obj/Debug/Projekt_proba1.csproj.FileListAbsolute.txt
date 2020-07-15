@@ -867,3 +867,4 @@ C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Backup FINAL\Projekt_pr
 C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Backup FINAL\Projekt_proba1\obj\Debug\Projekt_proba1.csproj.CopyComplete
 C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Backup FINAL\Projekt_proba1\obj\Debug\Projekt_proba1.exe
 C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Backup FINAL\Projekt_proba1\obj\Debug\Projekt_proba1.pdb
+C:\Users\HP Brand Store\OneDrive\Radna površina\Projekt\Shared za git\Software\CineManageAppMerged\Projekt_proba1\bin\Debug\CineManageHelp.chm
