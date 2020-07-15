@@ -45,6 +45,7 @@ namespace Projekt_proba1
         }
         private void txtLozinkaStvaranje_TextChanged(object sender, EventArgs e)
         {
+            //ako lozinka ima manje od 8 znakova prikazuje se prikladni label
             if (txtLozinkaStvaranje.Text.Count() < 8)
             {
                 lblLozinka.Text = "Lozinka premala!";
