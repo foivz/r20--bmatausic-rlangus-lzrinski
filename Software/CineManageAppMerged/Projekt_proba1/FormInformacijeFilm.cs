@@ -80,5 +80,10 @@ namespace Projekt_proba1
         {
             Close();
         }
+
+        private void FormInformacijeFilm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, "CineManageHelp.chm", HelpNavigator.Topic, "Informacije.html");
+        }
     }
 }

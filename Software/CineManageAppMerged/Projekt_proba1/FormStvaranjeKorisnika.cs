@@ -29,13 +29,13 @@ namespace Projekt_proba1
                 string email = txtEmail.Text;
                 if (provjera_loz == lozinka)
                 {
-                    DodajKorisnika(ime, prezime, kIme, lozinka, email);
+                    Funkcije.Registracija.DodajKorisnika(ime, prezime, kIme, lozinka, email);
                     MessageBox.Show("Korisnik " + kIme +" uspješno stvoren!");
                     Close();
                 }
                 else
                 {
-                    MessageBox.Show("Lozinka nije jednaka kao ponovljena lozinka!");
+                    throw new Iznimke.DodavanjeKorisnikaException("Lozinka nije jednaka kao ponovljena lozinka!");
                 }
             }
             catch (Iznimke.DodavanjeKorisnikaException ex)
@@ -43,59 +43,6 @@ namespace Projekt_proba1
                 MessageBox.Show(ex.Poruka);
             }
         }
-
-        private void DodajKorisnika(string firstn, string lastn, string username, string pass, string mail)
-        {
-            bool provjera = ProvjeriPostojecegKorisnika(username);
-            if (username == "")
-            {
-                throw new Iznimke.DodavanjeKorisnikaException("Korisnicko ime nesmije biti prazno polje");
-            }
-            else if (pass.Count() < 8)
-            {
-                throw new Iznimke.DodavanjeKorisnikaException("Lozinka mora imati najmanje 8 znakova");
-            }
-            else if (provjera == true)
-            {
-                throw new Iznimke.DodavanjeKorisnikaException("Korisnik već postoji!");
-            }
-            using (var context = new CineManageEntities())
-            {
-                var query = from r in context.Rolas
-                            where r.ime_role == "Registrirani korisnik"
-                            select r;
-                Rola uloga = query.Single();
-
-                Korisnik novi = new Korisnik
-                {
-                    ime = firstn,
-                    prezime = lastn,
-                    korisnicko_ime = username,
-                    lozinka = pass,
-                    email = mail,
-                    Rola = uloga
-                };
-                context.Korisniks.Add(novi);
-                context.SaveChanges();
-            }
-        }
-
-        private bool ProvjeriPostojecegKorisnika(string kime)
-        {
-            using (var context = new CineManageEntities())
-            {
-                var query = from u in context.Korisniks
-                            where u.korisnicko_ime == kime
-                            select u;
-                if (query.ToList().Count != 0)
-                {
-                    return true;
-                }
-                else
-                    return false;
-            }
-        }
-
         private void txtLozinkaStvaranje_TextChanged(object sender, EventArgs e)
         {
             if (txtLozinkaStvaranje.Text.Count() < 8)
@@ -113,6 +60,11 @@ namespace Projekt_proba1
         private void btnOdustani_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FormStvaranjeKorisnika_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, "CineManageHelp.chm", HelpNavigator.Topic, "Registracija.html");
         }
     }
 }

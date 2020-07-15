@@ -28,47 +28,28 @@ namespace Projekt_proba1
         {
             try
             {
-                string kime = txtKorisnickoIme.Text;
-                string lozinka = txtLozinka.Text;
-                Korisnik korisnik = DohvatiKorisnika(kime);
-                txtKorisnickoIme.Text = "";
-                txtLozinka.Text = "";
-                if (korisnik != null)
-                {
-                    if (korisnik.lozinka == lozinka)
-                    {
-                        FormPregledFilmova frm = new FormPregledFilmova(korisnik);
-                        this.Hide();
-                        frm.ShowDialog();
-                        this.Show();
-                    }
-                    else
-                        MessageBox.Show("Kriva lozinka!");
-                }
+               string kime = txtKorisnickoIme.Text;
+               string lozinka = txtLozinka.Text;
+               Korisnik korisnik = Funkcije.Login.DohvatiKorisnika(kime);
+               txtKorisnickoIme.Text = "";
+               txtLozinka.Text = "";
+               if (korisnik != null)
+               {
+                   if (korisnik.lozinka == lozinka)
+                   {
+                       FormPregledFilmova frm = new FormPregledFilmova(korisnik);
+                       this.Hide();
+                       frm.ShowDialog();
+                       this.Show();
+                   }
+                   else
+                       MessageBox.Show("Kriva lozinka!");
+               }
             }
             catch(Iznimke.LoginException ex)
             {
                 MessageBox.Show(ex.Poruka);
             }
-        }
-        private Korisnik DohvatiKorisnika(string kime)
-        {
-            Korisnik user;
-            Rola role;
-            using (var context = new CineManageEntities())
-            {
-                var query = from u in context.Korisniks
-                            where u.korisnicko_ime == kime
-                            select u;
-                if (query.ToList().Count != 0)
-                {
-                    user = query.Single();
-                    role = user.Rola;
-                }
-                else
-                    throw new Iznimke.LoginException("Nepostojeći korisnik!");
-            }
-            return user;
         }
 
         private void btnNeregistrirani_Click(object sender, EventArgs e)
@@ -83,6 +64,11 @@ namespace Projekt_proba1
         {
             txtKorisnickoIme.Text = "softypaw";
             txtLozinka.Text = "lozinka1";
+        }
+
+        private void FormLogin_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, "CineManageHelp.chm", HelpNavigator.Topic, "Prijava.html");
         }
     }
 }

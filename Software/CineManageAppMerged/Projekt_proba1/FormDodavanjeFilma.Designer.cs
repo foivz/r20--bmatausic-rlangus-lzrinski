@@ -388,8 +388,9 @@
             this.Controls.Add(this.pictureBox2);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormDodavanjeFilma";
-            this.Text = "Obriši vrijeme";
+            this.Text = "Dodavanje filma";
             this.Load += new System.EventHandler(this.FormDodavanjeFilma_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormDodavanjeFilma_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.pboxKinoSlika)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVremena)).EndInit();

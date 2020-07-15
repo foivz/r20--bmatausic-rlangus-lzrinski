@@ -378,6 +378,7 @@
             this.Name = "FormAzuriranjeFilma";
             this.Text = "Ažuriranje filma";
             this.Load += new System.EventHandler(this.FormAzuriranjeFilma_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormAzuriranjeFilma_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.pboxKinoSlika)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVremena)).EndInit();

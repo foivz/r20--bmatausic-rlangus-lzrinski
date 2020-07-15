@@ -55,7 +55,7 @@
             // 
             this.pboxKinoSlika.Image = ((System.Drawing.Image)(resources.GetObject("pboxKinoSlika.Image")));
             this.pboxKinoSlika.Location = new System.Drawing.Point(16, 65);
-            this.pboxKinoSlika.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pboxKinoSlika.Margin = new System.Windows.Forms.Padding(4);
             this.pboxKinoSlika.Name = "pboxKinoSlika";
             this.pboxKinoSlika.Size = new System.Drawing.Size(119, 108);
             this.pboxKinoSlika.TabIndex = 15;
@@ -75,7 +75,7 @@
             // btnRezervirajKartu
             // 
             this.btnRezervirajKartu.Location = new System.Drawing.Point(479, 506);
-            this.btnRezervirajKartu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRezervirajKartu.Margin = new System.Windows.Forms.Padding(4);
             this.btnRezervirajKartu.Name = "btnRezervirajKartu";
             this.btnRezervirajKartu.Size = new System.Drawing.Size(253, 28);
             this.btnRezervirajKartu.TabIndex = 19;
@@ -100,7 +100,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.pictureBox2.Location = new System.Drawing.Point(-3, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(753, 46);
             this.pictureBox2.TabIndex = 24;
@@ -197,7 +197,7 @@
             // pboxFilmCover
             // 
             this.pboxFilmCover.Location = new System.Drawing.Point(17, 215);
-            this.pboxFilmCover.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pboxFilmCover.Margin = new System.Windows.Forms.Padding(4);
             this.pboxFilmCover.Name = "pboxFilmCover";
             this.pboxFilmCover.Size = new System.Drawing.Size(165, 226);
             this.pboxFilmCover.TabIndex = 39;
@@ -254,10 +254,11 @@
             this.Controls.Add(this.btnRezervirajKartu);
             this.Controls.Add(this.lblKorisnickoIme);
             this.Controls.Add(this.pictureBox2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormInformacijeFilm";
             this.Text = "Informacije o filmu";
             this.Load += new System.EventHandler(this.FormInformacijeFilm_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormInformacijeFilm_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.pboxKinoSlika)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxFilmCover)).EndInit();

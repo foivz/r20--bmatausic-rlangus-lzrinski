@@ -29,58 +29,26 @@ namespace Projekt_proba1
 
         private void UkupnoProdanihUlaznica()
         {
-            using (var context = new CineManageEntities())
-            {
-                var query = from r in context.Rezervacijas
-                            select r.rezervacija_id;
-                int ukupnoProdanihUlaznica = query.Count();
-                lblUkUlaznice.Text = ukupnoProdanihUlaznica.ToString();
-
-            }
+            lblUkUlaznice.Text = Funkcije.Obracun.UkupnoProdanihUlaznica().ToString();
         }
 
         private void UkupnaZaradaOdUlaznica()
         {
-            using (var context = new CineManageEntities())
-            {
-                var query = from r in context.Rezervacijas.Include("Film").Include("Raspored_Prikazivanja")
-                            select r.Film.cijena;
-                double ukupnaZarada = query.Sum();
-                lblSumaUlaznice.Text = ukupnaZarada.ToString();
-
-            }
+            lblSumaUlaznice.Text = Funkcije.Obracun.UkupnaZaradaOdUlaznica().ToString();
         }
 
         private void RefreshObracunZarada()
         {
-            using (var context = new CineManageEntities())
-            {
-                var query = from r in context.Rezervacijas.Include("Film").Include("Raspored_Prikazivanja")
-                            select new RezervacijaView
-                            {
-                                ID_rezervacije = r.rezervacija_id,
-                                Ime_Filma = r.Film.naslov,
-                                Cijena_filma = r.Film.cijena,
-                                Vrijeme_Prikazivanja = r.Raspored_Prikazivanja.vrijeme_prikazivanja
-                            };
-
-                dgvZaradaOdUlaznica.DataSource = query.ToList();
-                dgvZaradaOdUlaznica.Columns["ID_rezervacije"].HeaderText = "ID rezervacije";
-                dgvZaradaOdUlaznica.Columns["Ime_Filma"].HeaderText = "Naslov filma";
-                dgvZaradaOdUlaznica.Columns["Cijena_filma"].HeaderText = "Cijena";
-                dgvZaradaOdUlaznica.Columns["Vrijeme_Prikazivanja"].HeaderText = "Datum i vrijeme prikazivanja";
-            }
+            dgvZaradaOdUlaznica.DataSource = Funkcije.Obracun.DohvatiRezervacijeSve();
+            dgvZaradaOdUlaznica.Columns["ID_rezervacije"].HeaderText = "ID rezervacije";
+            dgvZaradaOdUlaznica.Columns["Ime_Filma"].HeaderText = "Naslov filma";
+            dgvZaradaOdUlaznica.Columns["Cijena_filma"].HeaderText = "Cijena";
+            dgvZaradaOdUlaznica.Columns["Vrijeme_Prikazivanja"].HeaderText = "Datum i vrijeme prikazivanja";
         }
         private void FillCboxFilterFilm()
         {
-            using (var context = new CineManageEntities())
-            {
-                var query = from f in context.Films
-                            orderby f.naslov
-                            select f;
-                cboxFilterZaradaFilm.DataSource = query.ToList(); ;
-                cboxFilterUlazniceFilm.DataSource = query.ToList();
-            }
+            cboxFilterUlazniceFilm.DataSource = Funkcije.Obracun.DohvatiFilmove();
+            cboxFilterZaradaFilm.DataSource = Funkcije.Obracun.DohvatiFilmove();
         }
         private void cboxFilterZaradaFilm_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -91,36 +59,22 @@ namespace Projekt_proba1
         
         private void FilterImenaFilmova(string nazivFilma)
         {
-            using (var context = new CineManageEntities())
-            {
-                var query = from r in context.Rezervacijas
-                            where r.Film.naslov == nazivFilma
-                            select new RezervacijaView
-                            {
-                                ID_rezervacije = r.rezervacija_id,
-                                Ime_Filma = r.Film.naslov,
-                                Cijena_filma = r.Film.cijena,
-                                Vrijeme_Prikazivanja = r.Raspored_Prikazivanja.vrijeme_prikazivanja
-                            };
-                dgvZaradaOdUlaznica.DataSource = query.ToList();
-                dgvZaradaOdUlaznica.Columns["ID_rezervacije"].HeaderText = "ID rezervacije";
-                dgvZaradaOdUlaznica.Columns["Ime_Filma"].HeaderText = "Naslov filma";
-                dgvZaradaOdUlaznica.Columns["Cijena_filma"].HeaderText = "Cijena";
-                dgvZaradaOdUlaznica.Columns["Vrijeme_Prikazivanja"].HeaderText = "Datum i vrijeme prikazivanja";
-            }
+            dgvZaradaOdUlaznica.DataSource = Funkcije.Obracun.DohvatiRezervacijeFilm(nazivFilma);
+            dgvZaradaOdUlaznica.Columns["ID_rezervacije"].HeaderText = "ID rezervacije";
+            dgvZaradaOdUlaznica.Columns["Ime_Filma"].HeaderText = "Naslov filma";
+            dgvZaradaOdUlaznica.Columns["Cijena_filma"].HeaderText = "Cijena";
+            dgvZaradaOdUlaznica.Columns["Vrijeme_Prikazivanja"].HeaderText = "Datum i vrijeme prikazivanja";
         }
 
         private void UkupnaZaradaOdUlaznicaFilter(string nazivFilma)
         {
-            using (var context = new CineManageEntities())
+            List<RezervacijaView> rezervacijeFilm = Funkcije.Obracun.DohvatiRezervacijeFilm(nazivFilma);
+            double ukupnaZarada = 0;
+            foreach (RezervacijaView rez in rezervacijeFilm)
             {
-                var query = from r in context.Rezervacijas
-                            where r.Film.naslov == nazivFilma
-                            select r.Film.cijena;
-                double ukupnaZarada = query.Sum();
-                lblSumaUlaznice.Text = ukupnaZarada.ToString();
-
+                ukupnaZarada += rez.Cijena_filma;
             }
+            lblSumaUlaznice.Text = ukupnaZarada.ToString();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -130,15 +84,9 @@ namespace Projekt_proba1
         private void cboxFilterUlazniceFilm_SelectionChangeCommitted(object sender, EventArgs e)
         {
             Film odabrani = cboxFilterUlazniceFilm.SelectedItem as Film;
-            using (var context = new CineManageEntities())
-            {
-                var query = from r in context.Rezervacijas
-                            where r.Film.film_id == odabrani.film_id
-                            select r;
-                List<Rezervacija> rezervacijaFilm = query.ToList();
-                lblUkUlaznice.Text = rezervacijaFilm.Count().ToString();
-                lblNazivProdano.Text = odabrani.naslov;
-            }
+            List<RezervacijaView> rezervacije = Funkcije.Obracun.DohvatiRezervacijeFilm(odabrani.naslov);
+            lblUkUlaznice.Text = rezervacije.Count().ToString();
+            lblNazivProdano.Text = odabrani.naslov;
         }
 
         private void btnIzradiIzvjestaj_Click(object sender, EventArgs e)
@@ -147,6 +95,23 @@ namespace Projekt_proba1
             this.Hide();
             form.ShowDialog();
             this.Show();
+        }
+
+        private void FormObracun_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, "CineManageHelp.chm", HelpNavigator.Topic, "Poslovanje.html");
+        }
+
+        private void btnBezFilteraZarada_Click(object sender, EventArgs e)
+        {
+            RefreshObracunZarada();
+            UkupnaZaradaOdUlaznica();
+        }
+
+        private void btnBezFilteraProdaja_Click(object sender, EventArgs e)
+        {
+            lblNazivProdano.Text = "Ukupno prodanih ulaznica: ";
+            UkupnoProdanihUlaznica();
         }
     }
 }

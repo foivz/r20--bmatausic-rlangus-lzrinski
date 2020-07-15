@@ -165,6 +165,7 @@
             this.Controls.Add(this.splitter1);
             this.Name = "FormLogin";
             this.Text = "Login";
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormLogin_HelpRequested);
             this.ResumeLayout(false);
             this.PerformLayout();
 

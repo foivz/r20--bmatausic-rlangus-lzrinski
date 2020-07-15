@@ -149,6 +149,12 @@
     <Compile Include="FormStvaranjeKorisnika.Designer.cs">
       <DependentUpon>FormStvaranjeKorisnika.cs</DependentUpon>
     </Compile>
+    <Compile Include="Funkcije\AzuriranjeFunk.cs" />
+    <Compile Include="Funkcije\Dodavanje.cs" />
+    <Compile Include="Funkcije\Login.cs" />
+    <Compile Include="Funkcije\Obracun.cs" />
+    <Compile Include="Funkcije\PregledFilmova.cs" />
+    <Compile Include="Funkcije\Registracija.cs" />
     <Compile Include="Iznimke\DodavanjeKorisnikaException.cs" />
     <Compile Include="Iznimke\InformacijeFilmaException.cs" />
     <Compile Include="Iznimke\LoginException.cs" />
@@ -239,6 +245,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CineManageModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="CineManageHelp.chm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="CineManageModel.edmx.diagram">
       <DependentUpon>CineManageModel.edmx</DependentUpon>
     </None>

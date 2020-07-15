@@ -47,6 +47,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnBezFilteraZarada = new System.Windows.Forms.Button();
+            this.btnBezFilteraProdaja = new System.Windows.Forms.Button();
             this.gboxInfoTransakcije.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaradaOdUlaznica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxKinoSlika)).BeginInit();
@@ -56,6 +58,7 @@
             // 
             // gboxInfoTransakcije
             // 
+            this.gboxInfoTransakcije.Controls.Add(this.btnBezFilteraZarada);
             this.gboxInfoTransakcije.Controls.Add(this.lblSumaUlaznice);
             this.gboxInfoTransakcije.Controls.Add(this.label6);
             this.gboxInfoTransakcije.Controls.Add(this.cboxFilterZaradaFilm);
@@ -178,6 +181,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnBezFilteraProdaja);
             this.groupBox1.Controls.Add(this.lblUkUlaznice);
             this.groupBox1.Controls.Add(this.lblNazivProdano);
             this.groupBox1.Controls.Add(this.cboxFilterUlazniceFilm);
@@ -252,6 +256,26 @@
             this.label3.TabIndex = 69;
             this.label3.Text = "-------Svi filmovi-------";
             // 
+            // btnBezFilteraZarada
+            // 
+            this.btnBezFilteraZarada.Location = new System.Drawing.Point(640, 220);
+            this.btnBezFilteraZarada.Name = "btnBezFilteraZarada";
+            this.btnBezFilteraZarada.Size = new System.Drawing.Size(97, 33);
+            this.btnBezFilteraZarada.TabIndex = 9;
+            this.btnBezFilteraZarada.Text = "Bez filtera";
+            this.btnBezFilteraZarada.UseVisualStyleBackColor = true;
+            this.btnBezFilteraZarada.Click += new System.EventHandler(this.btnBezFilteraZarada_Click);
+            // 
+            // btnBezFilteraProdaja
+            // 
+            this.btnBezFilteraProdaja.Location = new System.Drawing.Point(640, 158);
+            this.btnBezFilteraProdaja.Name = "btnBezFilteraProdaja";
+            this.btnBezFilteraProdaja.Size = new System.Drawing.Size(97, 33);
+            this.btnBezFilteraProdaja.TabIndex = 10;
+            this.btnBezFilteraProdaja.Text = "Bez filtera";
+            this.btnBezFilteraProdaja.UseVisualStyleBackColor = true;
+            this.btnBezFilteraProdaja.Click += new System.EventHandler(this.btnBezFilteraProdaja_Click);
+            // 
             // FormObracun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -270,6 +294,7 @@
             this.Name = "FormObracun";
             this.Text = "Obračun";
             this.Load += new System.EventHandler(this.FormObracun_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormObracun_HelpRequested);
             this.gboxInfoTransakcije.ResumeLayout(false);
             this.gboxInfoTransakcije.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaradaOdUlaznica)).EndInit();
@@ -301,5 +326,7 @@
         private System.Windows.Forms.Label lblNazivProdano;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnBezFilteraZarada;
+        private System.Windows.Forms.Button btnBezFilteraProdaja;
     }
 }

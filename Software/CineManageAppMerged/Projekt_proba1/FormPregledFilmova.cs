@@ -44,121 +44,42 @@ namespace Projekt_proba1
                 }
             }
         }
-
         private void FillCbox()
         {
-            using (var context = new CineManageEntities())
-            {
-                var query = from k in context.Kategorijas
-                            orderby k.kategorija_ime
-                            select k;
-                List<Kategorija> kategorije = query.ToList();
-                List<string> naziviKategorija = new List<string>();
-                foreach ( Kategorija k in kategorije)
-                {
-                    naziviKategorija.Add(k.kategorija_ime);
-                }
-                cboxKategorije.DataSource = naziviKategorija;
-            }
+            cboxKategorije.DataSource = null;
+            cboxKategorije.DataSource = Funkcije.PregledFilmova.DohvatiKategorije();
         }
 
         private void RefreshFilmovi()
         {
-            using (var context = new CineManageEntities())
-            {
-                var query = from f in context.Films
-                            select new FilmView
-                            {
-                               film_id= f.film_id,
-                               naslov = f.naslov,
-                               redatelj = f.readtelj,
-                               dvorana = f.Dvorana.ime_dvorane,
-                               kategorija = f.Kategorija.kategorija_ime
-                            }; 
-
-                dgvFilmovi.DataSource = query.ToList();
-            }
+            dgvFilmovi.DataSource = null;
+            dgvFilmovi.DataSource = Funkcije.PregledFilmova.DohvatiFilmove();
         }
 
         private void btnFilterDatum_Click(object sender, EventArgs e)
         {
             DateTime date = dtPickerDatum.Value;
-            DohvatiFilmoveDatum(date);
+            dgvFilmovi.DataSource = null;
+            dgvFilmovi.DataSource = Funkcije.PregledFilmova.DohvatiFilmoveDatum(date);
         }
-
-        private void DohvatiFilmoveDatum(DateTime date)
-        {
-            using (var context = new CineManageEntities())
-            {
-                var query = from p in context.Prikazivanjes
-                            where p.Raspored_Prikazivanja.vrijeme_prikazivanja == date
-                            select new FilmView
-                            {
-                                film_id = p.Film.film_id,
-                                naslov = p.Film.naslov,
-                                redatelj = p.Film.readtelj,
-                                dvorana = p.Film.Dvorana.ime_dvorane,
-                                kategorija = p.Film.Kategorija.kategorija_ime
-                            }; ;
-                dgvFilmovi.DataSource = query.ToList();
-            }
-        }
-
         private void btnPocetniPrikaz_Click(object sender, EventArgs e)
         {
             RefreshFilmovi();
             txtNazivFilter.Text = "";
             cboxKategorije.SelectedIndex = 0;
         }
-
         private void btnFilterNaziv_Click(object sender, EventArgs e)
         {
             string naziv = txtNazivFilter.Text;
-            DohvatiFilmoveNaziv(naziv);
+            dgvFilmovi.DataSource = null;
+            dgvFilmovi.DataSource = Funkcije.PregledFilmova.DohvatiFilmoveNaziv(naziv);
         }
-
-        private void DohvatiFilmoveNaziv(string filter)
-        {
-            using (var context = new CineManageEntities())
-            {
-                var query = from p in context.Prikazivanjes
-                            where p.Film.naslov.Contains(filter) || p.Film.readtelj.Contains(filter)
-                            select new FilmView
-                            {
-                                film_id = p.Film.film_id,
-                                naslov = p.Film.naslov,
-                                redatelj = p.Film.readtelj,
-                                dvorana = p.Film.Dvorana.ime_dvorane,
-                                kategorija = p.Film.Kategorija.kategorija_ime
-                            };
-                dgvFilmovi.DataSource = query.Distinct().ToList();
-            }
-        }
-
         private void btnFilterKategorija_Click(object sender, EventArgs e)
         {
             string kategorija = cboxKategorije.SelectedItem as string;
-            DohvatiFilmoveKategorija(kategorija);
+            dgvFilmovi.DataSource = null;
+            dgvFilmovi.DataSource = Funkcije.PregledFilmova.DohvatiFilmoveKategorija(kategorija);
         }
-
-        private void DohvatiFilmoveKategorija(string kategorija)
-        {
-            using (var context = new CineManageEntities())
-            {
-                var query = from p in context.Prikazivanjes
-                            where p.Film.Kategorija.kategorija_ime == kategorija
-                            select new FilmView
-                            {
-                                film_id = p.Film.film_id,
-                                naslov = p.Film.naslov,
-                                redatelj = p.Film.readtelj,
-                                dvorana = p.Film.Dvorana.ime_dvorane,
-                                kategorija = p.Film.Kategorija.kategorija_ime
-                            };
-                dgvFilmovi.DataSource = query.Distinct().ToList();
-            }
-        }
-
         private void btnOdaberiFilm_Click(object sender, EventArgs e)
         {
             FilmView odabrani = dgvFilmovi.CurrentRow.DataBoundItem as FilmView;
@@ -185,17 +106,14 @@ namespace Projekt_proba1
                 this.Show();
             }
         }
-
         private void btnOdjava_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnPrijava_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnDodajNoviFilm_Click(object sender, EventArgs e)
         {
             using (var context = new CineManageEntities())
@@ -218,65 +136,16 @@ namespace Projekt_proba1
                     MessageBox.Show("Nema slobodnih dvorana!");
             }
         }
-
         private void btnObrisi_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Potvrdite brisanje", "Jeste li sigurni da želite obrisati film?", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 FilmView odabrani = dgvFilmovi.CurrentRow.DataBoundItem as FilmView;
-                using (var context = new CineManageEntities())
-                {
-                    var query = from f in context.Films
-                                where f.film_id == odabrani.film_id
-                                select f;
-                    Film odabraniFilm = query.Single();
-
-                    //brisanje rezervacije izbrisanog odabranog filma
-                    var queryRezervacije = from r in context.Rezervacijas
-                                           where r.film_film_id == odabraniFilm.film_id
-                                           select r;
-                    List<Rezervacija> rezervacije = queryRezervacije.ToList();
-                    foreach (Rezervacija r in rezervacije)
-                    {
-                        context.Rezervacijas.Remove(r);
-                        context.SaveChanges();
-                    }
-                    //brisanje zauzetosti sjedala odabranog filma
-                    var queryZauzetosti = from z in context.Zauzetost_Sjedala
-                                          where z.Prikazivanje.film_film_id == odabraniFilm.film_id
-                                          select z;
-                    List<Zauzetost_Sjedala> zauzetosti = queryZauzetosti.ToList();
-                    foreach (Zauzetost_Sjedala z in zauzetosti)
-                    {
-                        context.Zauzetost_Sjedala.Remove(z);
-                        context.SaveChanges();
-                    }
-                    //brisanje svih prikazivanja odabranog filma
-                    var queryPrikazivanja = from p in context.Prikazivanjes
-                                            where p.film_film_id == odabraniFilm.film_id
-                                            select p;
-                    List<Prikazivanje> prikazivanja = queryPrikazivanja.ToList();
-                    foreach (Prikazivanje p in prikazivanja)
-                    {
-                        context.Prikazivanjes.Remove(p);
-                        context.SaveChanges();
-                    }
-                    //mjenjanje zauzetosti dvorane
-                    var queryDvorana = from f in context.Films
-                                       where f.Dvorana.dvorana_id == odabraniFilm.Dvorana.dvorana_id
-                                       select f.Dvorana;
-                    Dvorana dvorana = queryDvorana.Single();
-                    dvorana.popunjena_dvorana = 0;
-                    context.SaveChanges();
-                    //brisanje filma
-                    context.Films.Remove(odabraniFilm);
-                    context.SaveChanges();
-                }
+                Funkcije.PregledFilmova.ObrisiFilm(odabrani.film_id);
                 RefreshFilmovi();
             }
         }
-
         private void btnAzurirajFilm_Click(object sender, EventArgs e)
         {
             if (dgvFilmovi.CurrentRow != null)
@@ -299,13 +168,16 @@ namespace Projekt_proba1
             else
                 MessageBox.Show("Odaberite film za ažuriranje!");
         }
-
         private void btnPrikazPosovanja_Click(object sender, EventArgs e)
         {
             FormObracun frmObracun = new FormObracun(korisnik);
             this.Hide();
             frmObracun.ShowDialog();
             this.Show();
+        }
+        private void FormPregledFilmova_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, "CineManageHelp.chm", HelpNavigator.Topic, "Pregled.html");
         }
     }
 }

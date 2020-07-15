@@ -431,6 +431,7 @@
             this.Name = "FormRezervacijaUlaznica";
             this.Text = "Rezervacija ulaznica";
             this.Load += new System.EventHandler(this.FormRezervacijaUlaznica_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormRezervacijaUlaznica_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.pboxFilmCover)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxKinoSlika)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
