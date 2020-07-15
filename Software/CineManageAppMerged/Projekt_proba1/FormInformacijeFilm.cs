@@ -51,6 +51,7 @@ namespace Projekt_proba1
             {
                 var query = from p in context.Prikazivanjes
                             where film.film_id == p.film_film_id
+                            orderby p.raspored_prikazivanja_idraspored_prikazivanja
                             select p.Raspored_Prikazivanja;
                 cboxVrijeme.DataSource = query.ToList();
             }
